@@ -1,0 +1,2371 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" /><meta property="og:type" content="website" /><link rel="mask-icon" href="/favicon.svg" color="#000000" /><link rel="alternate icon" type="image/png" href="/favicon.png" /><link rel="icon" type="image/svg+xml" href="/favicon.svg" /><link rel="preconnect" href="https://www.hubspot.com/" /><link rel="preconnect" href="https://stats.g.doubleclick.net" /><link rel="preconnect" href="https://www.google-analytics.com" /><title>Install - code-server v4.2.0 docs</title><meta name="robots" content="index,follow" /><meta name="description" content="How to install code-server." /><meta name="twitter:card" content="summary" /><meta name="twitter:site" content="@CoderHQ" /><meta property="og:title" content="Install - code-server v4.2.0 docs" /><meta property="og:description" content="How to install code-server." /><meta property="og:url" content="https://coder.com/docs/code-server/latest/install" /><meta property="og:image" content="https://coder.com/og-image.png" /><meta property="og:image:width" content="1200" /><meta property="og:image:height" content="675" /><link rel="canonical" href="https://coder.com/docs/code-server/latest/install" /><meta property="keywords" /><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://coder.com/blog//docs/code-server/latest/install"},"headline":"Install","description":"How to install code-server.","image":"https://coder.com/og-image.png","author":{"@type":"Person","name":"Coder"},"publisher":{"@type":"Organization","name":"Coder","logo":{"@type":"ImageObject","url":"https://coder.com/coder-logo-300x300.png"}}}</script><meta name="next-head-count" content="23" /><link rel="preload" href="/_next/static/css/0fab2cee6ce93949.css" as="style" /><link rel="stylesheet" href="/_next/static/css/0fab2cee6ce93949.css" data-n-g="" /><link rel="preload" href="/_next/static/css/4aa9ac36a9a13d25.css" as="style" /><link rel="stylesheet" href="/_next/static/css/4aa9ac36a9a13d25.css" data-n-p="" /><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-a146a8ef8f1e9d05.js" defer=""></script><script src="/_next/static/chunks/framework-79bce4a3a540b080.js" defer=""></script><script src="/_next/static/chunks/main-339de6c6280cb5e5.js" defer=""></script><script src="/_next/static/chunks/pages/_app-978922c037a38364.js" defer=""></script><script src="/_next/static/chunks/5169-4d776830c73f2739.js" defer=""></script><script src="/_next/static/chunks/5675-622b931e3b91258b.js" defer=""></script><script src="/_next/static/chunks/1561-fc1b098f75e91d7d.js" defer=""></script><script src="/_next/static/chunks/3428-15be6fadc1fe9d98.js" defer=""></script><script src="/_next/static/chunks/2951-e26b0d9865d551d8.js" defer=""></script><script src="/_next/static/chunks/pages/docs/code-server/latest/%5B%5B...slug%5D%5D-75e3893552b3fb36.js" defer=""></script><script src="/_next/static/pV0MNiuBXy7zRUCIeBBw7/_buildManifest.js" defer=""></script><script src="/_next/static/pV0MNiuBXy7zRUCIeBBw7/_ssgManifest.js" defer=""></script><script src="/_next/static/pV0MNiuBXy7zRUCIeBBw7/_middlewareManifest.js" defer=""></script><style id="jss-server-side">.MuiSvgIcon-root {
+  fill: currentColor;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  font-size: 1.7142857142857142rem;
+  transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  flex-shrink: 0;
+  user-select: none;
+}
+.MuiSvgIcon-colorPrimary {
+  color: #A2E0A5;
+}
+.MuiSvgIcon-colorSecondary {
+  color: #FFC358;
+}
+.MuiSvgIcon-colorAction {
+  color: #677693;
+}
+.MuiSvgIcon-colorError {
+  color: #D84343;
+}
+.MuiSvgIcon-colorDisabled {
+  color: #DDE2EC;
+}
+.MuiSvgIcon-fontSizeInherit {
+  font-size: inherit;
+}
+.MuiSvgIcon-fontSizeSmall {
+  font-size: 1.4285714285714284rem;
+}
+.MuiSvgIcon-fontSizeLarge {
+  font-size: 2.5rem;
+}
+.MuiButtonBase-root {
+  color: inherit;
+  border: 0;
+  cursor: pointer;
+  margin: 0;
+  display: inline-flex;
+  outline: 0;
+  padding: 0;
+  position: relative;
+  align-items: center;
+  user-select: none;
+  border-radius: 0;
+  vertical-align: middle;
+  -moz-appearance: none;
+  justify-content: center;
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.MuiButtonBase-root::-moz-focus-inner {
+  border-style: none;
+}
+.MuiButtonBase-root.Mui-disabled {
+  cursor: default;
+  pointer-events: none;
+}
+@media print {
+  .MuiButtonBase-root {
+    color-adjust: exact;
+  }
+}
+  .MuiIconButton-root {
+    flex: 0 0 auto;
+    color: #677693;
+    padding: 12px;
+    overflow: visible;
+    font-size: 1.7142857142857142rem;
+    text-align: center;
+    transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius: 50%;
+  }
+  .MuiIconButton-root:hover {
+    background-color: rgba(103, 118, 147, 0.08);
+  }
+  .MuiIconButton-root.Mui-disabled {
+    color: #DDE2EC;
+    background-color: transparent;
+  }
+@media (hover: none) {
+  .MuiIconButton-root:hover {
+    background-color: transparent;
+  }
+}
+  .MuiIconButton-edgeStart {
+    margin-left: -12px;
+  }
+  .MuiIconButton-sizeSmall.MuiIconButton-edgeStart {
+    margin-left: -3px;
+  }
+  .MuiIconButton-edgeEnd {
+    margin-right: -12px;
+  }
+  .MuiIconButton-sizeSmall.MuiIconButton-edgeEnd {
+    margin-right: -3px;
+  }
+  .MuiIconButton-colorInherit {
+    color: inherit;
+  }
+  .MuiIconButton-colorPrimary {
+    color: #A2E0A5;
+  }
+  .MuiIconButton-colorPrimary:hover {
+    background-color: rgba(162, 224, 165, 0.08);
+  }
+@media (hover: none) {
+  .MuiIconButton-colorPrimary:hover {
+    background-color: transparent;
+  }
+}
+  .MuiIconButton-colorSecondary {
+    color: #FFC358;
+  }
+  .MuiIconButton-colorSecondary:hover {
+    background-color: rgba(255, 195, 88, 0.08);
+  }
+@media (hover: none) {
+  .MuiIconButton-colorSecondary:hover {
+    background-color: transparent;
+  }
+}
+  .MuiIconButton-sizeSmall {
+    padding: 3px;
+    font-size: 1.2857142857142856rem;
+  }
+  .MuiIconButton-label {
+    width: 100%;
+    display: flex;
+    align-items: inherit;
+    justify-content: inherit;
+  }
+
+  .jss17 {
+    display: flex;
+  }
+  .jss18 {
+    display: flex;
+  }
+  .jss47 {
+    display: flex;
+    align-items: center;
+  }
+  .MuiTypography-root {
+    margin: 0;
+  }
+  .MuiTypography-body2 {
+    font-size: 18px;
+    font-family: Inter;
+    line-height: 32px;
+  }
+  .MuiTypography-body1 {
+    font-size: 22px;
+    line-height: 36px;
+  }
+  .MuiTypography-caption {
+    font-size: 12px;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    line-height: 16px;
+  }
+  .MuiTypography-button {
+    font-size: 14px;
+    font-family: 'Fira Code', monospace;
+    font-weight: bold;
+    line-height: 24px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .MuiTypography-h1 {
+    font-size: 72px;
+    font-family: Inter;
+    font-weight: bold;
+    line-height: 88px;
+  }
+  .MuiTypography-h2 {
+    font-size: 56px;
+    font-family: Inter;
+    font-weight: 500;
+    line-height: 72px;
+  }
+  .MuiTypography-h3 {
+    font-size: 44px;
+    font-family: Inter;
+    font-weight: 500;
+    line-height: 56px;
+  }
+  .MuiTypography-h4 {
+    font-size: 32px;
+    font-family: Inter;
+    font-weight: 500;
+    line-height: 48px;
+  }
+  .MuiTypography-h5 {
+    font-size: 28px;
+    font-family: Inter;
+    font-weight: 500;
+    line-height: 40px;
+  }
+  .MuiTypography-h6 {
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    line-height: 1.6;
+  }
+  .MuiTypography-subtitle1 {
+    font-size: 18px;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    line-height: 28px;
+  }
+  .MuiTypography-subtitle2 {
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    line-height: 24px;
+  }
+  .MuiTypography-overline {
+    font-size: 12px;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .MuiTypography-srOnly {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+  }
+  .MuiTypography-alignLeft {
+    text-align: left;
+  }
+  .MuiTypography-alignCenter {
+    text-align: center;
+  }
+  .MuiTypography-alignRight {
+    text-align: right;
+  }
+  .MuiTypography-alignJustify {
+    text-align: justify;
+  }
+  .MuiTypography-noWrap {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .MuiTypography-gutterBottom {
+    margin-bottom: 0.35em;
+  }
+  .MuiTypography-paragraph {
+    margin-bottom: 16px;
+  }
+  .MuiTypography-colorInherit {
+    color: inherit;
+  }
+  .MuiTypography-colorPrimary {
+    color: #A2E0A5;
+  }
+  .MuiTypography-colorSecondary {
+    color: #FFC358;
+  }
+  .MuiTypography-colorTextPrimary {
+    color: #0C005C;
+  }
+  .MuiTypography-colorTextSecondary {
+    color: #747474;
+  }
+  .MuiTypography-colorError {
+    color: #D84343;
+  }
+  .MuiTypography-displayInline {
+    display: inline;
+  }
+  .MuiTypography-displayBlock {
+    display: block;
+  }
+  .MuiButton-root {
+    color: #0C005C;
+    height: 48px;
+    padding: 6px 16px;
+    font-size: 13px;
+    min-width: 64px;
+    box-shadow: none;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+    font-family: Inter;
+    font-weight: 600;
+    line-height: 20px;
+    white-space: nowrap;
+    padding-left: 32px;
+    border-radius: 4px;
+    padding-right: 32px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition-duration: 0.2s;
+  }
+  .MuiButton-root:hover {
+    box-shadow: none;
+    text-decoration: none;
+    background-color: rgba(12, 0, 92, 0.08);
+  }
+  .MuiButton-root.Mui-disabled {
+    color: #DDE2EC;
+  }
+  .MuiButton-root .MuiSvgIcon-root {
+    vertical-align: middle;
+  }
+  .MuiButton-root a {
+    text-decoration: none;
+  }
+@media (hover: none) {
+  .MuiButton-root:hover {
+    background-color: transparent;
+  }
+}
+  .MuiButton-root:hover.Mui-disabled {
+    background-color: transparent;
+  }
+  .MuiButton-label {
+    width: 100%;
+    display: inherit;
+    align-items: inherit;
+    justify-content: inherit;
+  }
+  .MuiButton-label > span {
+    display: flex;
+    align-items: center;
+  }
+  .MuiButton-label .right-arrow-icon {
+    margin-left: 16px;
+  }
+  .MuiButton-text {
+    padding: 6px 8px;
+  }
+  .MuiButton-textPrimary {
+    color: #A2E0A5;
+  }
+  .MuiButton-textPrimary:hover {
+    background-color: rgba(162, 224, 165, 0.08);
+  }
+@media (hover: none) {
+  .MuiButton-textPrimary:hover {
+    background-color: transparent;
+  }
+}
+  .MuiButton-textSecondary {
+    color: #FFC358;
+  }
+  .MuiButton-textSecondary:hover {
+    background-color: rgba(255, 195, 88, 0.08);
+  }
+@media (hover: none) {
+  .MuiButton-textSecondary:hover {
+    background-color: transparent;
+  }
+}
+  .MuiButton-outlined {
+    border: 1px solid rgba(0, 0, 0, 0.23);
+    border-color: #0C005C;
+  }
+  .MuiButton-outlined.Mui-disabled {
+    border: 1px solid #E6EAF2;
+  }
+  .MuiButton-outlined:hover {
+    color: #651fff;
+    background: transparent;
+    border-color: #651fff;
+  }
+  .MuiButton-outlinedPrimary {
+    color: #A2E0A5;
+    border: 1px solid rgba(162, 224, 165, 0.5);
+  }
+  .MuiButton-outlinedPrimary:hover {
+    border: 1px solid #A2E0A5;
+    background-color: rgba(162, 224, 165, 0.08);
+  }
+@media (hover: none) {
+  .MuiButton-outlinedPrimary:hover {
+    background-color: transparent;
+  }
+}
+  .MuiButton-outlinedSecondary {
+    color: #FFC358;
+    border: 1px solid rgba(255, 195, 88, 0.5);
+  }
+  .MuiButton-outlinedSecondary:hover {
+    border: 1px solid #FFC358;
+    background-color: rgba(255, 195, 88, 0.08);
+  }
+  .MuiButton-outlinedSecondary.Mui-disabled {
+    border: 1px solid #DDE2EC;
+  }
+@media (hover: none) {
+  .MuiButton-outlinedSecondary:hover {
+    background-color: transparent;
+  }
+}
+  .MuiButton-contained {
+    color: #FFFFFF;
+    box-shadow: none;
+    background-color: #0C005C;
+  }
+  .MuiButton-contained:hover {
+    box-shadow: 0 4px 10px rgba(29, 64, 126, 0.24);
+    background-color: #7c4dff;
+  }
+  .MuiButton-contained.Mui-focusVisible {
+    box-shadow: 0 6px 14px rgba(29, 64, 126, 0.26);
+  }
+  .MuiButton-contained:active {
+    box-shadow: 0 8px 18px rgba(29, 64, 126, 0.28);
+  }
+  .MuiButton-contained.Mui-disabled {
+    color: #DDE2EC;
+    box-shadow: none;
+    background-color: #E6EAF2;
+  }
+  .MuiButton-contained:active, .MuiButton-contained:focus, .MuiButton-contained:hover {
+    box-shadow: none !important;
+  }
+@media (hover: none) {
+  .MuiButton-contained:hover {
+    box-shadow: 0 2px 6px rgba(29, 64, 126, 0.22);
+    background-color: #e0e0e0;
+  }
+}
+  .MuiButton-contained:hover.Mui-disabled {
+    background-color: #E6EAF2;
+  }
+  .MuiButton-containedPrimary {
+    color: #0C005C;
+    background-color: #A2E0A5;
+  }
+  .MuiButton-containedPrimary:hover {
+    background-color: #38823b;
+  }
+@media (hover: none) {
+  .MuiButton-containedPrimary:hover {
+    background-color: #A2E0A5;
+  }
+}
+  .MuiButton-containedSecondary {
+    color: #FFFFFF;
+    background-color: #0C005C;
+  }
+  .MuiButton-containedSecondary:hover {
+    color: #FFFFFF;
+    background-color: #5E41B6;
+  }
+@media (hover: none) {
+  .MuiButton-containedSecondary:hover {
+    background-color: #FFC358;
+  }
+}
+  .MuiButton-disableElevation {
+    box-shadow: none;
+  }
+  .MuiButton-disableElevation:hover {
+    box-shadow: none;
+  }
+  .MuiButton-disableElevation.Mui-focusVisible {
+    box-shadow: none;
+  }
+  .MuiButton-disableElevation:active {
+    box-shadow: none;
+  }
+  .MuiButton-disableElevation.Mui-disabled {
+    box-shadow: none;
+  }
+  .MuiButton-colorInherit {
+    color: inherit;
+    border-color: currentColor;
+  }
+  .MuiButton-textSizeSmall {
+    padding: 4px 5px;
+    font-size: 0.9285714285714285rem;
+  }
+  .MuiButton-textSizeLarge {
+    padding: 8px 11px;
+    font-size: 1.0714285714285714rem;
+  }
+  .MuiButton-outlinedSizeSmall {
+    padding: 3px 9px;
+    font-size: 0.9285714285714285rem;
+  }
+  .MuiButton-outlinedSizeLarge {
+    padding: 7px 21px;
+    font-size: 1.0714285714285714rem;
+  }
+  .MuiButton-containedSizeSmall {
+    padding: 4px 10px;
+    font-size: 0.9285714285714285rem;
+  }
+  .MuiButton-containedSizeLarge {
+    padding: 8px 22px;
+    font-size: 1.0714285714285714rem;
+  }
+  .MuiButton-sizeLarge {
+    height: 56px;
+    padding: 48px;
+    font-size: 13px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .MuiButton-fullWidth {
+    width: 100%;
+  }
+  .MuiButton-startIcon {
+    display: inherit;
+    margin-left: -4px;
+    margin-right: 8px;
+  }
+  .MuiButton-startIcon.MuiButton-iconSizeSmall {
+    margin-left: -2px;
+  }
+  .MuiButton-endIcon {
+    display: inherit;
+    margin-left: 8px;
+    margin-right: -4px;
+  }
+  .MuiButton-endIcon.MuiButton-iconSizeSmall {
+    margin-right: -2px;
+  }
+  .MuiButton-iconSizeSmall > *:first-child {
+    font-size: 18px;
+  }
+  .MuiButton-iconSizeMedium > *:first-child {
+    font-size: 20px;
+  }
+  .MuiButton-iconSizeLarge > *:first-child {
+    font-size: 22px;
+  }
+  .MuiButtonGroup-root {
+    display: inline-flex;
+    border-radius: 4px;
+  }
+  .MuiButtonGroup-contained {
+    box-shadow: 0 2px 2px rgba(0, 23, 121, 0.08);
+  }
+  .MuiButtonGroup-disableElevation {
+    box-shadow: none;
+  }
+  .MuiButtonGroup-fullWidth {
+    width: 100%;
+  }
+  .MuiButtonGroup-vertical {
+    flex-direction: column;
+  }
+  .MuiButtonGroup-grouped {
+    min-width: 40px;
+  }
+  .MuiButtonGroup-groupedHorizontal:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .MuiButtonGroup-groupedHorizontal:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .MuiButtonGroup-groupedVertical:not(:first-child) {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  .MuiButtonGroup-groupedVertical:not(:last-child) {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .MuiButtonGroup-groupedTextHorizontal:not(:last-child) {
+    border-right: 1px solid rgba(0, 0, 0, 0.23);
+  }
+  .MuiButtonGroup-groupedTextVertical:not(:last-child) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.23);
+  }
+  .MuiButtonGroup-groupedTextPrimary:not(:last-child) {
+    border-color: rgba(162, 224, 165, 0.5);
+  }
+  .MuiButtonGroup-groupedTextSecondary:not(:last-child) {
+    border-color: rgba(255, 195, 88, 0.5);
+  }
+  .MuiButtonGroup-groupedOutlinedHorizontal:not(:first-child) {
+    margin-left: -1px;
+  }
+  .MuiButtonGroup-groupedOutlinedHorizontal:not(:last-child) {
+    border-right-color: transparent;
+  }
+  .MuiButtonGroup-groupedOutlinedVertical:not(:first-child) {
+    margin-top: -1px;
+  }
+  .MuiButtonGroup-groupedOutlinedVertical:not(:last-child) {
+    border-bottom-color: transparent;
+  }
+  .MuiButtonGroup-groupedOutlinedPrimary:hover {
+    border-color: #A2E0A5;
+  }
+  .MuiButtonGroup-groupedOutlinedSecondary:hover {
+    border-color: #FFC358;
+  }
+  .MuiButtonGroup-groupedContained {
+    box-shadow: none;
+  }
+  .MuiButtonGroup-groupedContainedHorizontal:not(:last-child) {
+    border-right: 1px solid #bdbdbd;
+  }
+  .MuiButtonGroup-groupedContainedHorizontal:not(:last-child).Mui-disabled {
+    border-right: 1px solid #DDE2EC;
+  }
+  .MuiButtonGroup-groupedContainedVertical:not(:last-child) {
+    border-bottom: 1px solid #bdbdbd;
+  }
+  .MuiButtonGroup-groupedContainedVertical:not(:last-child).Mui-disabled {
+    border-bottom: 1px solid #DDE2EC;
+  }
+  .MuiButtonGroup-groupedContainedPrimary:not(:last-child) {
+    border-color: #38823b;
+  }
+  .MuiButtonGroup-groupedContainedSecondary:not(:last-child) {
+    border-color: #ECB450;
+  }
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+strong, b {
+  font-weight: 700;
+}
+body {
+  color: #0C005C;
+  margin: 0;
+  font-size: 18px;
+  font-family: Inter;
+  line-height: 32px;
+  background-color: #F9FCFF;
+}
+@media print {
+  body {
+    background-color: #FFFFFF;
+  }
+}
+body::backdrop {
+  background-color: #F9FCFF;
+}
+a .right-arrow-icon {
+  margin-left: 8px;
+}
+@keyframes mui-auto-fill {}
+@keyframes mui-auto-fill-cancel {}
+  .MuiInputBase-root {
+    color: #0C005C;
+    border: 1px solid #0C005C;
+    cursor: text;
+    display: inline-flex;
+    position: relative;
+    font-size: 22px;
+    background: #FFFFFF;
+    box-sizing: border-box;
+    align-items: center;
+    font-family: Inter;
+    line-height: 1.1876em;
+    border-radius: 4px;
+  }
+  .MuiInputBase-root.Mui-disabled {
+    color: #A6A6A6;
+    cursor: default;
+  }
+  .MuiInputBase-root::before {
+    display: none;
+  }
+  .MuiInputBase-root::after {
+    display: none;
+  }
+  .MuiInputBase-root input {
+    height: 40px;
+    padding: 0 16px;
+    font-size: 16px;
+    line-height: 21px;
+  }
+  .MuiInputBase-multiline {
+    padding: 6px 0 7px;
+  }
+  .MuiInputBase-multiline.MuiInputBase-marginDense {
+    padding-top: 3px;
+  }
+  .MuiInputBase-fullWidth {
+    width: 100%;
+  }
+  .MuiInputBase-input {
+    font: inherit;
+    color: currentColor;
+    width: 100%;
+    border: 0;
+    height: 1.1876em;
+    margin: 0;
+    display: block;
+    padding: 6px 0 7px;
+    min-width: 0;
+    background: none;
+    box-sizing: content-box;
+    animation-name: mui-auto-fill-cancel;
+    letter-spacing: inherit;
+    animation-duration: 10ms;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .MuiInputBase-input::-webkit-input-placeholder {
+    color: currentColor;
+    opacity: 0.42;
+    transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  }
+  .MuiInputBase-input::-moz-placeholder {
+    color: currentColor;
+    opacity: 0.42;
+    transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  }
+  .MuiInputBase-input:-ms-input-placeholder {
+    color: currentColor;
+    opacity: 0.42;
+    transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  }
+  .MuiInputBase-input::-ms-input-placeholder {
+    color: currentColor;
+    opacity: 0.42;
+    transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  }
+  .MuiInputBase-input:focus {
+    outline: 0;
+  }
+  .MuiInputBase-input:invalid {
+    box-shadow: none;
+  }
+  .MuiInputBase-input::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+  .MuiInputBase-input.Mui-disabled {
+    opacity: 1;
+  }
+  .MuiInputBase-input:-webkit-autofill {
+    animation-name: mui-auto-fill;
+    animation-duration: 5000s;
+  }
+  label[data-shrink=false] + .MuiInputBase-formControl .MuiInputBase-input::-webkit-input-placeholder {
+    opacity: 0 !important;
+  }
+  label[data-shrink=false] + .MuiInputBase-formControl .MuiInputBase-input::-moz-placeholder {
+    opacity: 0 !important;
+  }
+  label[data-shrink=false] + .MuiInputBase-formControl .MuiInputBase-input:-ms-input-placeholder {
+    opacity: 0 !important;
+  }
+  label[data-shrink=false] + .MuiInputBase-formControl .MuiInputBase-input::-ms-input-placeholder {
+    opacity: 0 !important;
+  }
+  label[data-shrink=false] + .MuiInputBase-formControl .MuiInputBase-input:focus::-webkit-input-placeholder {
+    opacity: 0.42;
+  }
+  label[data-shrink=false] + .MuiInputBase-formControl .MuiInputBase-input:focus::-moz-placeholder {
+    opacity: 0.42;
+  }
+  label[data-shrink=false] + .MuiInputBase-formControl .MuiInputBase-input:focus:-ms-input-placeholder {
+    opacity: 0.42;
+  }
+  label[data-shrink=false] + .MuiInputBase-formControl .MuiInputBase-input:focus::-ms-input-placeholder {
+    opacity: 0.42;
+  }
+  .MuiInputBase-inputMarginDense {
+    padding-top: 3px;
+  }
+  .MuiInputBase-inputMultiline {
+    height: auto;
+    resize: none;
+    padding: 0;
+  }
+  .MuiInputBase-inputTypeSearch {
+    -moz-appearance: textfield;
+    -webkit-appearance: textfield;
+  }
+  .MuiInput-root {
+    position: relative;
+  }
+  label + .MuiInput-formControl {
+    margin-top: 16px;
+  }
+  .MuiInput-colorSecondary.MuiInput-underline:after {
+    border-bottom-color: #FFC358;
+  }
+  .MuiInput-underline:after {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    position: absolute;
+    transform: scaleX(0);
+    transition: transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+    border-bottom: 2px solid #A2E0A5;
+    pointer-events: none;
+  }
+  .MuiInput-underline.Mui-focused:after {
+    transform: scaleX(1);
+  }
+  .MuiInput-underline.Mui-error:after {
+    transform: scaleX(1);
+    border-bottom-color: #D84343;
+  }
+  .MuiInput-underline:before {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "\00a0";
+    position: absolute;
+    transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+    pointer-events: none;
+  }
+  .MuiInput-underline:hover:not(.Mui-disabled):before {
+    border-bottom: 2px solid #0C005C;
+  }
+  .MuiInput-underline.Mui-disabled:before {
+    border-bottom-style: dotted;
+  }
+@media (hover: none) {
+  .MuiInput-underline:hover:not(.Mui-disabled):before {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+  }
+}
+  .MuiInputAdornment-root {
+    height: 0.01em;
+    display: flex;
+    max-height: 2em;
+    align-items: center;
+    white-space: nowrap;
+  }
+  .MuiInputAdornment-root .MuiSvgIcon-root {
+    color: #677693;
+  }
+  .MuiInputAdornment-filled.MuiInputAdornment-positionStart:not(.MuiInputAdornment-hiddenLabel) {
+    margin-top: 16px;
+  }
+  .MuiInputAdornment-positionStart {
+    margin-left: 6px;
+    margin-right: 12px;
+  }
+  .MuiInputAdornment-positionEnd {
+    margin-left: 8px;
+  }
+  .MuiInputAdornment-disablePointerEvents {
+    pointer-events: none;
+  }
+  .MuiPopover-paper {
+    outline: 0;
+    position: absolute;
+    max-width: calc(100% - 32px);
+    min-width: 16px;
+    max-height: calc(100% - 32px);
+    min-height: 16px;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  .MuiMenu-paper {
+    margin-top: 8px;
+    max-height: calc(100% - 96px);
+    -webkit-overflow-scrolling: touch;
+  }
+  .MuiMenu-list {
+    outline: 0;
+  }
+  .jss22 {
+    position: relative;
+  }
+  .jss22.CdrButton-error.MuiButton-contained {
+    color: #FFF;
+    background-color: #D84343;
+  }
+  .jss22.CdrButton-error.MuiButton-outlined {
+    color: #D84343;
+    border-color: #D84343;
+  }
+  .jss22.CdrButton-error.MuiButton-text {
+    color: #D84343;
+  }
+  .jss22.CdrButton-error.MuiButton-text:hover {
+    background-color: rgba(216, 67, 67, 0.08);
+  }
+  .jss22.CdrButton-error.MuiButton-text.Mui-disabled {
+    color: rgba(166, 166, 166, 0.5);
+  }
+@media (hover: none) {
+  .jss22.CdrButton-error.MuiButton-text:hover {
+    background-color: transparent;
+  }
+}
+  .jss22.CdrButton-error.MuiButton-outlined:hover {
+    background-color: rgba(216, 67, 67, 0.08);
+  }
+  .jss22.CdrButton-error.MuiButton-outlined.Mui-disabled {
+    color: rgba(166, 166, 166, 0.5);
+    border-color: #DDE2EC;
+  }
+@media (hover: none) {
+  .jss22.CdrButton-error.MuiButton-outlined:hover {
+    background-color: transparent;
+  }
+}
+  .jss22.CdrButton-error.MuiButton-outlined:hover.Mui-disabled {
+    background-color: transparent;
+  }
+  .jss22.CdrButton-error.MuiButton-contained:hover {
+    background-color: rgb(151, 46, 46);
+  }
+  .jss22.CdrButton-error.MuiButton-contained.Mui-disabled {
+    color: rgba(166, 166, 166, 0.5);
+    background-color: #E6EAF2;
+  }
+@media (hover: none) {
+  .jss22.CdrButton-error.MuiButton-contained:hover {
+    background-color: transparent;
+  }
+}
+  .jss22.CdrButton-error.MuiButton-contained:hover.Mui-disabled {
+    background-color: transparent;
+  }
+  .jss23 {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+  }
+  .MuiButton-sizeSmall .jss23 {
+    width: 18px;
+    height: 18px;
+  }
+  .jss24 {
+    top: 50%;
+    left: 50%;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+  }
+  .jss25 {
+    color: #A6A6A6;
+  }
+
+  .jss58.MuiTypography-body1 {
+    line-height: 21px;
+  }
+  .jss58.MuiTypography-body2 {
+    line-height: 18px;
+    letter-spacing: 0.2px;
+  }
+  .jss65 {
+    left: 32px;
+    width: 310px;
+    bottom: 32px;
+    z-index: 20;
+    position: fixed;
+    box-shadow: 0px 30px 60px rgba(0, 0, 0, 0.32);
+    text-align: center;
+    transition: all 0.75s ease;
+    border-radius: 4px;
+    background-color: #FFF;
+  }
+  .jss65 .body {
+    padding: 24px 32px;
+  }
+  .jss65 .title {
+    margin: 0;
+    font-size: 24px;
+    font-family: Inter, sans-serif;
+    font-weight: 600;
+    line-height: 34px;
+    margin-bottom: 8px;
+  }
+  .jss65 p {
+    margin: 0;
+    font-size: 16px;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    line-height: 28px;
+  }
+  .jss65 .actions {
+    width: 100%;
+  }
+  .jss65 .actions button {
+    width: 100%;
+    padding-left: 0;
+    border-radius: 0;
+    padding-right: 0;
+  }
+  .jss65 .actions a {
+    width: 100%;
+    display: block;
+    text-decoration: none;
+  }
+  .jss65 .actions a + button {
+    border-bottom-right-radius: 4px;
+  }
+  .jss65 .actions a button {
+    color: #333;
+    border: 1px solid #ECECEC;
+    font-size: 14px;
+    font-family: Inter, sans-serif;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0;
+    text-transform: initial;
+    text-decoration: none;
+    border-bottom-left-radius: 4px;
+  }
+@media (max-width:767.95px) {
+  .jss65 {
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    border-radius: 0;
+  }
+  .jss65 .body {
+    padding: 19px;
+    text-align: left;
+    align-items: center;
+    grid-template-rows: none;
+    grid-template-columns: auto auto;
+  }
+  .jss65 .title {
+    margin: 0;
+    font-size: 24px;
+    font-family: Inter, sans-serif;
+    font-weight: 700;
+    line-height: 36px;
+  }
+  .jss65 p {
+    color: #333;
+    margin: 0;
+    font-size: 16px;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  .jss65 .actions button:first-child, .jss65 .actions button:last-child {
+    border-radius: 0;
+  }
+}
+  .jss16 {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    max-width: 1344px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  .jss16.full {
+    max-width: 100%;
+  }
+@media (max-width:767.95px) {
+  .jss16 {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+#__next {
+  display: flex;
+  max-width: 100vw;
+  min-height: 100vh;
+  flex-direction: column;
+}
+body {
+  overflow-x: hidden;
+}
+  .jss35 {
+    height: 100%;
+    display: flex;
+    padding: 32px;
+    overflow-y: auto;
+    padding-left: 70px;
+    flex-direction: column;
+  }
+@media (max-width:991.95px) {
+  .jss35 {
+    padding-bottom: 160px;
+  }
+}
+  .jss36 {
+    width: 250px;
+    z-index: 1;
+    position: relative;
+    padding-left: 0;
+  }
+  .jss36.trailing {
+    padding-left: 16px;
+  }
+  .jss36 .link {
+    color: #747474;
+    display: block;
+    position: relative;
+    font-size: 16px;
+    transition: 300ms color ease;
+    line-height: 27px;
+    margin-bottom: 8px;
+    text-decoration: none;
+  }
+  .jss36 .link svg {
+    top: 3px;
+    fill: currentColor;
+    left: -38px;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    transition: 300ms filter ease;
+  }
+  .jss36 .link.tree-active {
+    color: #333333;
+  }
+  .jss36 .link.trailing.active > .title {
+    font-weight: 600;
+  }
+  .jss36 .link > .title {
+    position: relative;
+  }
+  .jss36 .link.group.tree-active {
+    font-weight: 600;
+  }
+  .jss36 .link.tree-active > .arrow svg {
+    transform: rotateZ(180deg);
+  }
+  .jss36 .link > .arrow > svg {
+    left: unset;
+    right: 0;
+    width: 14px;
+    transform: rotateZ(0deg);
+    transition: transform 0.3s ease;
+  }
+  .jss36 .link > .title:after {
+    top: 9px;
+    left: -10px;
+    width: 4px;
+    height: 4px;
+    content: ' ';
+    opacity: 0;
+    position: absolute;
+    background: black;
+    transition: 300ms opacity ease;
+    border-radius: 100%;
+  }
+  .jss36 .link.trailing.active > .title:after {
+    opacity: 1;
+  }
+  .jss36 .link.tree-active .title > .jss36 .link.tree-active:before, .jss36 .link.tree-active:after {
+    opacity: 1;
+  }
+  .jss37 {
+    overflow: hidden;
+    position: relative;
+    max-height: 0;
+    transition: 300ms max-height ease;
+    margin-left: -40px;
+    padding-left: 40px;
+  }
+  .jss37 .wrapper {
+    opacity: 0;
+    transform: translateY(-200px);
+    transition: 300ms transform ease, 800ms opacity ease;
+  }
+  .jss37.active {
+    opacity: 1;
+    max-height: 1000px;
+  }
+  .jss37.active .wrapper {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  .jss37.ruler::before {
+    top: 7px;
+    left: 10px;
+    width: 2px;
+    bottom: 12px;
+    content: ' ';
+    opacity: 0.08;
+    position: absolute;
+    background: #747474;
+    border-radius: 4px;
+  }
+@media (max-width:991.95px) {
+  .jss36 .link {
+    font-size: 18px;
+  }
+  .jss37 {
+    opacity: 1;
+    max-height: 1000px;
+  }
+  .jss37 .wrapper {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+  .jss44 {
+    display: flex;
+    font-size: 14px;
+    flex-direction: row;
+  }
+  .jss45 {
+    color: #38823b;
+    transition: color 0.3s ease;
+    text-decoration: none;
+  }
+  .jss45:hover {
+    color: #0C005C;
+  }
+  .jss46 {
+    color: #747474;
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+  .jss50 {
+    right: 12px;
+    bottom: 12px;
+    height: 24px;
+    position: absolute;
+    font-size: 10px;
+    padding-left: 8px;
+    border-radius: 4px;
+    padding-right: 8px;
+  }
+  .jss50[disabled] {
+    color: #747474;
+  }
+  .jss51 {
+    width: 12px;
+    height: 12px;
+  }
+  .jss49 {
+    position: relative;
+  }
+  .jss49 code {
+    padding-right: 80px;
+  }
+  .jss41 {
+    color: #333;
+    margin: 0;
+    padding: 12px 24px;
+    position: relative;
+    font-size: 14px;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    line-height: 24px;
+    border-radius: 8px;
+    margin-bottom: 32px;
+    background-color: #E9FAE5;
+  }
+  .jss41 a {
+    color: inherit !important;
+    font-weight: 600;
+  }
+  .jss41 a:hover {
+    text-decoration: underline;
+  }
+  .jss42 {
+    padding-right: 16px;
+  }
+  .jss43 {
+    top: 12px;
+    right: 12px;
+    position: absolute !important;
+  }
+  .jss43 svg {
+    color: #747474;
+    width: 16px;
+    height: 16px;
+  }
+  .jss52 {
+    margin-top: auto;
+  }
+  .jss53 {
+    margin-top: 64px;
+  }
+@media (max-width:767.95px) {
+  .jss53 {
+    margin-top: 32px;
+  }
+}
+  .jss54 {
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  }
+  .jss55 {
+    display: flex;
+    margin-top: 16px;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  .jss55 svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+  }
+@media (max-width:767.95px) {
+  .jss55 {
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+  .jss55 a {
+    display: block;
+  }
+}
+  .jss56 {
+    color: #242424;
+    display: flex;
+    align-items: center;
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+  .jss56 .logo {
+    fill: currentColor;
+    width: 116px;
+  }
+  .jss57 {
+    gap: 40px;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
+  .jss57 a {
+    color: #A7A7A7;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    text-decoration: none;
+  }
+@media (max-width:767.95px) {
+  .jss57 {
+    gap: 8px;
+    align-items: flex-end;
+    flex-direction: column;
+  }
+}
+  .jss57 a:hover {
+    color: #000;
+    transition: color 0.3s ease;
+  }
+  .jss48 {
+    display: inline-block;
+    margin-left: 16px;
+  }
+@media (max-width:767.95px) {
+  .jss48 {
+    display: block;
+    margin-top: 8px;
+    margin-left: 0;
+  }
+}
+  .jss59 {
+    width: 240px;
+  }
+  .jss60 {
+    top: 160px;
+    position: sticky;
+  }
+  .jss61 {
+    margin: 0;
+    font-size: 10px;
+    font-family: Inter, sans-serif;
+    font-weight: 600;
+    line-height: 20px;
+    margin-bottom: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .jss62 {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .jss63 {
+    color: #747474;
+    margin: 0;
+    overflow: hidden;
+    font-size: 14px;
+    transition: color 0.3s ease;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    line-height: 24px;
+    white-space: nowrap;
+    margin-bottom: 4px;
+    text-overflow: ellipsis;
+  }
+  .jss63 a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .jss63 a:hover {
+    color: #519A54;
+  }
+  .jss64 {
+    color: #000;
+    font-weight: 600;
+  }
+@media (max-width:1199.95px) {
+  .jss59 {
+    display: none;
+  }
+}
+  .jss19 {
+    font: inherit;
+    color: inherit;
+    height: auto;
+    padding: 0;
+    background: transparent;
+    padding-left: 8px;
+    border-radius: 4px;
+    padding-right: 8px;
+    letter-spacing: inherit;
+    text-transform: inherit;
+  }
+  .jss19:hover {
+    color: #FFF;
+    background: transparent;
+  }
+  .jss20 {
+    height: 12px;
+  }
+  .jss21 {
+    cursor: inherit;
+    font-weight: 700;
+    background-color: inherit !important;
+  }
+.algolia-autocomplete .ds-dropdown-menu {
+  width: 650px;
+  max-width: 650px;
+  transform: translateX(-50px) translateY(10px);
+  box-shadow: 0px 30px 60px rgba(0, 0, 0, 0.32);
+  border-radius: 16px;
+}
+.algolia-autocomplete .ds-dropdown-menu [class^=ds-dataset-] {
+  border: none;
+  border-radius: 16px;
+}
+.algolia-autocomplete.algolia-autocomplete-left .ds-dropdown-menu:before {
+  left: 58px;
+}
+.algolia-autocomplete .algolia-docsearch-suggestion--category-header {
+  font-size: 16px;
+  text-decoration: none;
+}
+.algolia-autocomplete .algolia-docsearch-suggestion--subcategory-column {
+  font-size: 16px;
+  font-family: Inter;
+  line-height: 32px;
+}
+.algolia-autocomplete .algolia-docsearch-suggestion--title {
+  font-size: 16px;
+  font-family: Inter;
+  font-weight: 600;
+  line-height: 32px;
+}
+.algolia-autocomplete .algolia-docsearch-suggestion--text {
+  font-size: 12px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  line-height: 16px;
+}
+.algolia-autocomplete .ds-cursor .algolia-docsearch-suggestion--content {
+  background: rgba(162, 224, 165, 0.2) !important;
+}
+.algolia-autocomplete .algolia-docsearch-footer {
+  display: none;
+}
+  .jss26 {
+    height: 44px;
+    background: #111111;
+    border-radius: 100px;
+  }
+  .jss27 {
+    margin-left: 24px;
+  }
+  .jss27 svg {
+    color: #BFBFBF !important;
+    width: 16px;
+    height: 16px;
+  }
+  .jss28 {
+    color: #FFFFFF;
+    padding: 12px !important;
+  }
+  .jss28::placeholder {
+    color: #747474;
+    opacity: 1;
+  }
+@media (max-width:991.95px) {
+.algolia-autocomplete .ds-dropdown-menu {
+  width: 100%;
+  max-width: 650px;
+  min-width: 310px;
+  transform: translateX(-50px) translateY(10px);
+  box-shadow: 0px 30px 60px rgba(0, 0, 0, 0.32);
+  border-radius: 8px;
+}
+.algolia-autocomplete .ds-dropdown-menu [class^=ds-dataset-] {
+  border-radius: 8px;
+}
+.algolia-autocomplete .algolia-docsearch-suggestion--category-header {
+  font-size: 14px;
+}
+.algolia-autocomplete .algolia-docsearch-suggestion--subcategory-column {
+  font-size: 14px;
+}
+.algolia-autocomplete .algolia-docsearch-suggestion--title {
+  font-size: 14px;
+  font-family: Inter;
+  line-height: 32px;
+}
+}
+  .jss5 {
+    top: -0.1px;
+    height: 72px;
+    display: flex;
+    z-index: 2;
+    position: sticky;
+    background: #242424;
+    transition: background-color 0.3s ease;
+    align-items: center;
+    backdrop-filter: blur(3px);
+  }
+  .jss5.scrolled {
+    background: rgba(36, 36, 36, 0.9);
+  }
+  .jss5 .inner {
+    display: flex;
+    position: relative;
+    align-items: center;
+  }
+  .jss5 .logo-link, .jss5 .docs-link {
+    height: 25px;
+  }
+  .jss5 .logo {
+    fill: white;
+    width: 116px;
+  }
+  .jss5 .docs-link {
+    color: #A6A6A6;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 32px;
+    margin-left: 12px;
+    text-decoration: none;
+  }
+  .jss5 .divider {
+    font-size: 100%;
+    margin-right: -8px;
+  }
+  .jss6 {
+    width: 100%;
+    display: flex;
+    margin-left: 40px;
+    justify-content: flex-end;
+  }
+  .jss7 {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  .jss7 a, .jss7 span {
+    color: #A7A7A7;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    margin-left: 40px;
+    text-decoration: none;
+  }
+  .jss7 span {
+    height: 28px;
+  }
+  .jss7 a:hover, .jss7 span:hover {
+    color: #FFF;
+    transition: color 0.3s ease;
+  }
+  .jss8 {
+    bottom: 2px;
+    position: relative;
+  }
+  .jss9 {
+    display: none;
+    padding-top: 8px;
+    border-bottom: 1px solid #ECECEC;
+    padding-bottom: 8px;
+    background-color: #F3F3F3;
+  }
+  .jss10 {
+    color: #333;
+    display: flex;
+  }
+  .jss10 a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .jss11:hover {
+    color: #333;
+  }
+  .jss12 {
+    color: #747474;
+    font-size: 80%;
+    margin-left: 8px;
+  }
+  .jss13 {
+    height: 100%;
+    display: none;
+    align-items: center;
+  }
+  .jss14 {
+    color: #747474;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .jss14 svg {
+    fill: currentColor;
+    width: 24px;
+  }
+  .jss14:last-child {
+    margin-right: -8px;
+  }
+@media (max-width:1519.95px) {
+  .jss7 .md-hide {
+    display: none;
+  }
+}
+@media (max-width:991.95px) {
+  .jss5 .links {
+    display: none;
+  }
+  .jss15 {
+    display: none;
+  }
+  .jss8 {
+    display: none;
+  }
+  .jss9 {
+    display: block;
+  }
+  .jss13 {
+    display: flex;
+  }
+}
+  .jss29 {
+    color: #747474;
+    width: 100%;
+    height: 64px;
+    padding: 0;
+    font-size: 13px;
+    background: transparent;
+    font-style: normal;
+    font-family: Inter, sans-serif;
+    font-weight: 600;
+    line-height: 20px;
+    padding-left: 32px;
+    border-bottom: 1px solid #DDDDDD;
+    border-radius: 0;
+    padding-right: 32px;
+    letter-spacing: 2px;
+    text-transform: initial;
+    justify-content: space-between;
+  }
+  .jss29:hover {
+    background-color: #F3F3F3;
+  }
+  .jss29.MuiButton-contained.Mui-disabled {
+    color: inherit;
+    background-color: inherit;
+  }
+  .jss30 {
+    height: 12px;
+  }
+  .jss31 {
+    left: 16px !important;
+  }
+  .jss32 {
+    cursor: inherit;
+    font-weight: 700;
+    background-color: inherit !important;
+  }
+  .jss33 {
+    color: #747474;
+    font-size: 14px;
+    border-top: 1px solid #DDDDDD;
+    background-color: #FFF;
+  }
+  .jss33 svg {
+    width: 20px;
+    margin-right: 8px;
+  }
+  .jss33:hover {
+    color: #000;
+    background: #FFF;
+  }
+  .jss34 {  }
+  .jss38 {
+    color: #333333;
+    height: 100%;
+    display: flex;
+    max-width: 936px;
+    padding-left: 32px;
+    padding-right: 32px;
+    flex-direction: column;
+  }
+  .jss38 > div > * {
+    z-index: 1;
+    position: relative;
+  }
+  .jss38 header {
+    z-index: 2;
+    position: relative;
+    margin-top: 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    margin-bottom: 32px;
+    padding-bottom: 16px;
+  }
+  .jss38 h1 {
+    color: #0C005C;
+    font-size: 32px;
+    margin-top: 0;
+    font-family: Inter, sans-serif;
+    line-height: 40px;
+    margin-bottom: 0;
+  }
+  .jss38 .reading-time {
+    color: #747474;
+    display: flex;
+    font-size: 16px;
+    align-items: center;
+    margin-left: auto;
+  }
+  .jss38 .description {
+    color: #747474;
+    margin-top: 12px;
+  }
+  .jss38 h2 {
+    font-size: 24px;
+    margin-top: 24px;
+    line-height: 40px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    margin-bottom: 16px;
+  }
+  .jss38 h3 {
+    font-size: 20px;
+    margin-top: 24px;
+    margin-bottom: 8px;
+  }
+  .jss38 p {
+    position: relative;
+    margin-top: 16px;
+    line-height: 27px;
+    margin-bottom: 16px;
+  }
+  .jss38 strong {
+    font-weight: 600;
+  }
+  .jss38 video {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    border-radius: 16px;
+  }
+  .jss38 a > .next-image {
+    display: inline-block !important;
+  }
+  .jss38 .next-image > img {
+    width: 100%;
+    height: auto;
+  }
+  .jss38 p, .jss38 ol, .jss38 ul {
+    font-size: 16px;
+  }
+  .jss38 h2, .jss38 h3, .jss38 h4, .jss38 h5, .jss38 h6 {
+    z-index: 0;
+    position: relative;
+    margin-top: -72px;
+    font-family: Inter, sans-serif;
+    padding-top: 96px;
+  }
+  .jss38 table {
+    border: 1px solid #ECECEC;
+    display: block;
+    overflow-x: auto;
+    border-radius: 4px;
+    border-spacing: 0;
+  }
+  .jss38 pre {
+    overflow: auto;
+    position: relative;
+    background: #f6f8fa;
+    line-height: 20px;
+    border-radius: 8px;
+  }
+  .jss38 code {
+    overflow: visible;
+    font-size: 14px;
+    background: #f6f8fa;
+    font-family: Fira Code, SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+    white-space: pre;
+    border-radius: 8px;
+  }
+  .jss38 p > code {
+    padding-top: 2px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 2px;
+  }
+  .jss38 blockquote {
+    color: #747474;
+    background: #F3F3F3;
+    border-left: 4px solid #747474;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 16px;
+  }
+  .jss38 .card {
+    border: 1px solid #D9D9D9;
+  }
+  .jss38 ol {
+    position: relative;
+    list-style: none;
+    padding-left: 32px;
+    counter-reset: li;
+  }
+  .jss38 a {
+    color: #38823b;
+    text-decoration: none;
+  }
+  .jss38 .get-started {
+    display: flex;
+    padding: 32px;
+    z-index: 2;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.04);
+    margin-top: 32px;
+    border-radius: 16px;
+    padding-bottom: 0;
+  }
+  .jss38 .guides {
+    display: grid;
+    grid-gap: 32px;
+    grid-template-columns: 1fr 1fr;
+  }
+  .jss38 .guides .guide p {
+    color: #747474;
+  }
+  .jss38 .guides .guide ul {
+    position: relative;
+    list-style: none;
+    padding-top: 32px;
+    padding-left: 24px;
+  }
+  .jss38 .guides .guide ul::before {
+    top: 0;
+    left: 0;
+    color: #747474;
+    content: 'In this section...';
+    position: absolute;
+    font-size: 12px;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    line-height: 16px;
+  }
+  .jss38 .get-started h2 {
+    margin-top: -72px;
+    border-bottom: 0;
+  }
+  .jss38 .get-started p {
+    color: #747474;
+    margin: 0;
+    margin-bottom: 24px;
+  }
+  .jss38 .get-started ul {
+    display: flex;
+    padding: 0;
+    position: relative;
+    list-style: none;
+    margin-top: 24px;
+    padding-top: 32px;
+    margin-bottom: 0;
+    padding-bottom: 32px;
+  }
+  .jss38 .get-started .next-image {
+    max-width: 850px;
+    align-self: flex-end;
+    margin-left: auto;
+    margin-right: -300px;
+  }
+  .jss38 .get-started ul::before {
+    top: 0;
+    color: #747474;
+    content: 'In this section...';
+    position: absolute;
+    font-size: 12px;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    line-height: 16px;
+  }
+  .jss38 .get-started ul li {
+    padding: 0px 12px;
+    font-size: 14px;
+    background: #FFFFFF;
+    white-space: nowrap;
+    margin-right: 8px;
+    border-radius: 8px;
+  }
+  .jss38 ol li::before {
+    left: 8px;
+    color: #747474;
+    content: counter(li) '.';
+    position: absolute;
+    font-weight: 600;
+    counter-increment: li;
+  }
+  .jss38 button.outlined {
+    color: #242424;
+    border: 1px solid #242424;
+    background: transparent;
+  }
+  .jss38 button.arrow::after {
+    content: '=>';
+    font-family: 'Fira Code';
+    margin-left: 8px;
+    letter-spacing: 0;
+  }
+  .jss38 blockquote > p {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  .jss38 code .hljs-strong {
+    font-weight: 600;
+  }
+  .jss38 table th {
+    margin: 0;
+    padding: 8px 24px;
+    font-size: 12px;
+    text-align: left;
+    font-family: Inter, sans-serif;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background-color: #F3F3F3;
+  }
+  .jss38 table td {
+    color: #333;
+    margin: 0;
+    padding: 8px 24px;
+    font-size: 14px;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    line-height: 24px;
+    border-bottom: 1px solid #ECECEC;
+  }
+  .jss38 table tr:last-child td {
+    border-bottom: 0;
+  }
+  .jss38 h2 > a > span, .jss38 h3 > a > span, .jss38 h4 > a > span, .jss38 h5 > a > span, .jss38 h6 > a > span {
+    width: 32px;
+    height: 48px;
+    opacity: 0;
+    position: absolute;
+    background: url(/doc/link.png) no-repeat center;
+    transition: 150ms opacity ease;
+    margin-left: -32px;
+    background-size: 16px 16px;
+    background-position: 4px 10px;
+  }
+  .jss38 h2:hover > a > span, .jss38 h3:hover > a > span, .jss38 h4:hover > a > span, .jss38 h5:hover > a > span, .jss38 h6:hover > a > span {
+    opacity: 1;
+  }
+  .jss38 a > .next-image > div {
+    border-radius: 0;
+  }
+  .jss38 .next-image > div {
+    border-radius: 16px;
+  }
+  .jss38 .reading-time svg {
+    width: 18px;
+    margin-right: 8px;
+  }
+  .jss38 header p {
+    margin-bottom: 0;
+  }
+  .jss39 {
+    display: grid;
+    row-gap: 24px;
+    column-gap: 48px;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .jss39 .card {
+    padding: 24px;
+    background: rgba(0, 0, 0, 0.04);
+    border-radius: 16px;
+  }
+  .jss40 h1:first-child {
+    display: none;
+  }
+  .jss40 h1:first-child + ul {
+    margin-top: 0;
+  }
+@media (max-width:1199.95px) {
+  .jss39 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width:991.95px) {
+  .jss38 .get-started {
+    flex-direction: column;
+  }
+  .jss38 .guides {
+    margin-top: 32px;
+    grid-template-columns: 1fr;
+  }
+  .jss38 .get-started h2 {
+    padding-top: 72px;
+  }
+  .jss38 .get-started ul {
+    display: block;
+    flex-direction: column;
+  }
+  .jss38 .get-started .next-image {
+    margin-left: 0;
+    margin-right: -200px;
+  }
+  .jss38 .get-started ul li {
+    width: fit-content;
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+}
+@media (max-width:767.95px) {
+  .jss38 .top {
+    display: flex;
+    align-items: baseline;
+    flex-direction: column;
+  }
+  .jss38 .reading-time {
+    margin-top: 8px;
+    margin-left: unset;
+  }
+  .jss38 header {
+    margin-bottom: 16px;
+  }
+  .jss38 pre > code {
+    padding-right: 96px;
+  }
+  .jss38 h2 > a > span, .jss38 h3 > a > span, .jss38 h4 > a > span, .jss38 h5 > a > span, .jss38 h6 > a > span {
+    width: 24px;
+    margin-left: -24px;
+  }
+  .jss38 header .description {
+    display: none;
+  }
+  .jss39 {
+    grid-template-columns: 1fr;
+  }
+}
+  .jss1 {
+    flex: 1;
+    display: flex;
+    position: relative;
+    flex-direction: row;
+  }
+  .jss2 {
+    top: 72px;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    z-index: 1;
+    position: fixed;
+    background: white;
+    border-right: 1px solid #D9D9D9;
+    flex-direction: column;
+  }
+  .jss3 {
+    width: 100%;
+    display: flex;
+    z-index: 0;
+    flex-direction: column;
+  }
+  .jss4 {
+    gap: 40px;
+    flex: 1;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    max-width: 1136px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+@media (max-width:1919.95px) {
+  .jss2 {
+    height: calc(100vh - 72px);
+    margin: 0 auto;
+    position: sticky;
+  }
+}
+@media (max-width:991.95px) {
+  .jss2 {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 100%;
+    height: unset;
+    position: absolute;
+    max-height: calc(100vh - 72px);
+    overflow-y: auto;
+    transition: 350ms bottom ease;
+    pointer-events: none;
+  }
+  .jss2.mobile-open {
+    bottom: 0;
+    pointer-events: all;
+  }
+  .jss4 {
+    display: initial;
+    padding-bottom: 0;
+  }
+}</style></head><body><div id="__next" data-reactroot=""><header class="jss5"><div class="inner jss16 full"><div class="MuiBox-root jss17"><a aria-label="Home" class="logo-link" href="/"><svg viewBox="0 0 341 75" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo"><path d="M176.753 32.7584H165.554C165.35 31.3095 164.932 30.0226 164.301 28.8976C163.671 27.7555 162.861 26.7839 161.872 25.9828C160.884 25.1817 159.742 24.568 158.446 24.1419C157.168 23.7158 155.779 23.5027 154.279 23.5027C151.568 23.5027 149.208 24.176 147.196 25.5226C145.185 26.8521 143.625 28.7953 142.517 31.3521C141.409 33.8919 140.855 36.9771 140.855 40.6078C140.855 44.3408 141.409 47.4771 142.517 50.0169C143.642 52.5567 145.21 54.4743 147.222 55.7697C149.233 57.0652 151.56 57.7129 154.202 57.7129C155.685 57.7129 157.057 57.5169 158.318 57.1249C159.597 56.7328 160.73 56.1618 161.719 55.4118C162.708 54.6447 163.526 53.7158 164.173 52.6249C164.838 51.534 165.298 50.2896 165.554 48.8919L176.753 48.943C176.463 51.3464 175.739 53.6646 174.58 55.8976C173.438 58.1135 171.895 60.0993 169.952 61.855C168.026 63.5936 165.725 64.9743 163.048 65.997C160.389 67.0027 157.381 67.5055 154.023 67.5055C149.352 67.5055 145.176 66.4487 141.494 64.3351C137.83 62.2214 134.932 59.1618 132.801 55.1561C130.688 51.1504 129.631 46.301 129.631 40.6078C129.631 34.8976 130.705 30.0396 132.852 26.0339C135 22.0283 137.915 18.9771 141.597 16.8805C145.279 14.7669 149.421 13.7101 154.023 13.7101C157.057 13.7101 159.869 14.1362 162.46 14.9885C165.068 15.8408 167.378 17.0851 169.389 18.7214C171.401 20.3408 173.037 22.3266 174.298 24.6788C175.577 27.0311 176.395 29.7243 176.753 32.7584Z"></path><path d="M202.032 67.5567C198.06 67.5567 194.625 66.7129 191.728 65.0254C188.847 63.3209 186.623 60.9516 185.054 57.9175C183.486 54.8663 182.702 51.3294 182.702 47.3067C182.702 43.2499 183.486 39.7044 185.054 36.6703C186.623 33.6192 188.847 31.2499 191.728 29.5624C194.625 27.8578 198.06 27.0055 202.032 27.0055C206.003 27.0055 209.429 27.8578 212.31 29.5624C215.208 31.2499 217.441 33.6192 219.009 36.6703C220.577 39.7044 221.361 43.2499 221.361 47.3067C221.361 51.3294 220.577 54.8663 219.009 57.9175C217.441 60.9516 215.208 63.3209 212.31 65.0254C209.429 66.7129 206.003 67.5567 202.032 67.5567ZM202.083 59.1192C203.89 59.1192 205.398 58.6078 206.608 57.5851C207.819 56.5453 208.731 55.1305 209.344 53.3408C209.975 51.551 210.29 49.5141 210.29 47.23C210.29 44.9459 209.975 42.9089 209.344 41.1192C208.731 39.3294 207.819 37.9146 206.608 36.8749C205.398 35.8351 203.89 35.3152 202.083 35.3152C200.259 35.3152 198.725 35.8351 197.481 36.8749C196.253 37.9146 195.324 39.3294 194.694 41.1192C194.08 42.9089 193.773 44.9459 193.773 47.23C193.773 49.5141 194.08 51.551 194.694 53.3408C195.324 55.1305 196.253 56.5453 197.481 57.5851C198.725 58.6078 200.259 59.1192 202.083 59.1192Z"></path><path d="M242.715 67.4288C239.732 67.4288 237.031 66.6618 234.61 65.1277C232.207 63.5766 230.298 61.301 228.883 58.301C227.485 55.284 226.786 51.5851 226.786 47.2044C226.786 42.7044 227.511 38.9629 228.96 35.98C230.408 32.98 232.335 30.7385 234.738 29.2555C237.158 27.7555 239.809 27.0055 242.69 27.0055C244.889 27.0055 246.721 27.3805 248.187 28.1305C249.67 28.8635 250.863 29.7839 251.766 30.8919C252.687 31.9828 253.386 33.0567 253.863 34.1135H254.195V14.426H265.062V66.7896H254.323V60.4999H253.863C253.352 61.5908 252.627 62.6732 251.69 63.747C250.769 64.8038 249.568 65.6817 248.085 66.3805C246.619 67.0794 244.829 67.4288 242.715 67.4288ZM246.167 58.7612C247.923 58.7612 249.406 58.2839 250.616 57.3294C251.843 56.3578 252.781 55.0027 253.428 53.2641C254.093 51.5254 254.425 49.4885 254.425 47.1533C254.425 44.818 254.102 42.7896 253.454 41.068C252.806 39.3464 251.869 38.0169 250.641 37.0794C249.414 36.1419 247.923 35.6732 246.167 35.6732C244.377 35.6732 242.869 36.1589 241.641 37.1305C240.414 38.1021 239.485 39.4487 238.854 41.1703C238.224 42.8919 237.908 44.8862 237.908 47.1533C237.908 49.4374 238.224 51.4572 238.854 53.2129C239.502 54.9516 240.431 56.3152 241.641 57.3038C242.869 58.2754 244.377 58.7612 246.167 58.7612Z"></path><path d="M291.715 67.5567C287.675 67.5567 284.198 66.7385 281.283 65.1021C278.385 63.4487 276.152 61.1135 274.584 58.0964C273.016 55.0624 272.232 51.4743 272.232 47.3322C272.232 43.2925 273.016 39.747 274.584 36.6959C276.152 33.6447 278.36 31.2669 281.206 29.5624C284.07 27.8578 287.428 27.0055 291.28 27.0055C293.871 27.0055 296.283 27.4232 298.516 28.2584C300.766 29.0766 302.726 30.3124 304.397 31.9658C306.084 33.6192 307.397 35.6987 308.334 38.2044C309.272 40.693 309.74 43.6078 309.74 46.9487V49.9402H276.578V43.1902H299.488C299.488 41.622 299.147 40.2328 298.465 39.0226C297.783 37.8124 296.837 36.8663 295.627 36.1845C294.434 35.4857 293.044 35.1362 291.459 35.1362C289.806 35.1362 288.34 35.5197 287.061 36.2868C285.8 37.0368 284.811 38.051 284.095 39.3294C283.38 40.5908 283.013 41.997 282.996 43.5482V49.9658C282.996 51.9089 283.354 53.5879 284.07 55.0027C284.803 56.4175 285.834 57.5084 287.164 58.2754C288.493 59.0425 290.07 59.426 291.894 59.426C293.104 59.426 294.212 59.2555 295.218 58.9146C296.223 58.5737 297.084 58.0624 297.8 57.3805C298.516 56.6987 299.061 55.8635 299.436 54.8749L309.51 55.5396C308.999 57.9601 307.951 60.0737 306.365 61.8805C304.797 63.6703 302.769 65.068 300.28 66.0737C297.809 67.0624 294.953 67.5567 291.715 67.5567Z"></path><path d="M316.648 66.7896V27.5169H327.208V34.3692H327.617C328.333 31.9317 329.535 30.0908 331.222 28.8464C332.91 27.5851 334.853 26.9544 337.052 26.9544C337.597 26.9544 338.185 26.9885 338.816 27.0567C339.447 27.1249 340.001 27.2186 340.478 27.3379V37.0027C339.967 36.8493 339.259 36.7129 338.356 36.5936C337.452 36.4743 336.626 36.4146 335.876 36.4146C334.273 36.4146 332.842 36.7641 331.58 37.4629C330.336 38.1447 329.347 39.0993 328.614 40.3266C327.898 41.5538 327.54 42.9686 327.54 44.5709V66.7896H316.648Z"></path><path d="M102.464 32.5472C100.371 32.5472 98.9767 31.3202 98.9767 28.8017V14.3362C98.9767 5.10163 95.1722 0 85.3443 0H80.779V9.75122H82.1741C86.0417 9.75122 87.8805 11.8823 87.8805 15.6924V28.4788C87.8805 34.0324 89.529 36.2927 93.1432 37.4551C89.529 38.553 87.8805 40.8777 87.8805 46.4313C87.8805 49.5957 87.8805 52.7599 87.8805 55.9244C87.8805 58.572 87.8805 61.1551 87.1831 63.8027C86.4856 66.2568 85.3443 68.5815 83.7592 70.5833C82.8715 71.7459 81.857 72.7145 80.7158 73.6187V74.9101H85.2808C95.1088 74.9101 98.9132 69.8085 98.9132 60.5738V46.1084C98.9132 43.5253 100.245 42.3629 102.401 42.3629H105V32.6116H102.464V32.5472Z"></path><path d="M71.3947 14.7257H57.3186C57.0015 14.7257 56.748 14.4674 56.748 14.1445V13.0467C56.748 12.7238 57.0015 12.4655 57.3186 12.4655H71.4581C71.775 12.4655 72.0287 12.7238 72.0287 13.0467V14.1445C72.0287 14.4674 71.7116 14.7257 71.3947 14.7257Z"></path><path d="M73.8044 28.6738H63.5327C63.2156 28.6738 62.9619 28.4154 62.9619 28.0925V26.9948C62.9619 26.672 63.2156 26.4135 63.5327 26.4135H73.8044C74.1215 26.4135 74.375 26.672 74.375 26.9948V28.0925C74.375 28.3509 74.1215 28.6738 73.8044 28.6738Z"></path><path d="M77.862 21.6998H57.3186C57.0015 21.6998 56.748 21.4415 56.748 21.1186V20.0208C56.748 19.6979 57.0015 19.4396 57.3186 19.4396H77.7985C78.1157 19.4396 78.3694 19.6979 78.3694 20.0208V21.1186C78.3694 21.3769 78.1791 21.6998 77.862 21.6998Z"></path><path d="M41.0235 17.888C42.4183 17.888 43.8134 18.0172 45.1448 18.3401V15.6924C45.1448 11.9469 47.047 9.75122 50.8514 9.75122H52.2462V0H47.681C37.853 0 34.0488 5.10163 34.0488 14.3362V19.115C36.2679 18.3401 38.6141 17.888 41.0235 17.888Z"></path><path d="M82.1739 53.0168C81.1594 44.8154 74.9456 37.9701 66.9564 36.4202C64.7373 35.9683 62.518 35.9036 60.3623 36.2911C60.2989 36.2911 60.2989 36.2264 60.2355 36.2264C56.7482 28.8001 49.2664 23.8922 41.1504 23.8922C33.0344 23.8922 25.616 28.671 22.0652 36.0974C22.0018 36.0974 22.0018 36.162 21.9384 36.162C19.6558 35.9036 17.3732 36.0327 15.0906 36.614C7.22825 38.5512 1.26813 45.2674 0.190222 53.4041C0.0633989 54.2436 0 55.0831 0 55.8581C0 58.3119 1.64855 60.5722 4.05796 60.8951C7.03803 61.3473 9.63766 59.0223 9.57426 56.0519C9.57426 55.5997 9.57426 55.0831 9.63766 54.6311C10.1449 50.4981 13.2518 47.011 17.3098 46.0422C18.5779 45.7193 19.846 45.6549 21.0507 45.8487C24.9185 46.3653 28.7228 44.3632 30.3713 40.8761C31.5761 38.293 33.4783 36.0327 36.0145 34.8057C38.8042 33.4495 41.9746 33.256 44.8914 34.2893C47.9347 35.387 50.2172 37.7117 51.6123 40.6177C53.0706 43.4593 53.768 45.4611 56.875 45.8487C58.143 46.0422 61.6937 45.9777 63.0254 45.9131C65.625 45.9131 68.2246 46.8172 70.0634 48.69C71.268 49.9814 72.1557 51.596 72.5362 53.4041C73.1068 56.3101 72.4094 59.2161 70.6974 61.4117C69.4926 62.9616 67.8441 64.124 66.0053 64.6406C65.1176 64.899 64.2299 64.9635 63.3422 64.9635C62.8351 64.9635 62.1377 64.9635 61.3134 64.9635C58.7772 64.9635 53.3877 64.9635 49.3296 64.9635C46.5399 64.9635 44.3206 62.7034 44.3206 59.8618V50.3043V40.9405C44.3206 40.1657 43.6866 39.52 42.9257 39.52H40.9601C37.0922 39.5844 33.9855 43.9759 33.9855 48.6253C33.9855 53.275 33.9855 65.6094 33.9855 65.6094C33.9855 70.6464 37.9799 74.7148 42.9257 74.7148C42.9257 74.7148 64.9276 74.6501 65.2445 74.6501C70.3169 74.1335 75.009 71.4859 78.1792 67.4175C81.3496 63.4782 82.8079 58.3119 82.1739 53.0168Z"></path></svg></a><div class="MuiBox-root jss18 jss8"><a aria-label="Docs" class="docs-link" href="/docs/code-server/latest">docs</a><div class="docs-link divider">/</div><div class="docs-link"><div><button class="MuiButtonBase-root MuiButton-root MuiButton-contained jss19 jss22" tabindex="0" type="button" aria-controls="versions-menu" aria-haspopup="true"><span class="MuiButton-label"><span>code-server</span><span class="MuiButton-endIcon MuiButton-iconSizeMedium"><svg class="MuiSvgIcon-root jss20" focusable="false" viewBox="0 0 20 20" aria-hidden="true" style="fill:none" xmlns="http://www.w3.org/2000/svg"><path d="M18 7L10 15L2 7" stroke="currentColor" stroke-width="2" stroke-miterlimit="10"></path></svg></span></span></button></div></div></div></div><div class="jss6"><div class="MuiInputBase-root MuiInput-root MuiInput-underline .algolia-autocomplete jss26 jss15 MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-adornedStart" spellcheck="false" autoCorrect="off"><div class="MuiInputAdornment-root jss27 MuiInputAdornment-positionStart"><svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 16 16" aria-hidden="true"><path d="M15.707 13.293L13 10.586C13.63 9.536 14 8.311 14 7C14 3.14 10.859 0 7 0C3.141 0 0 3.14 0 7C0 10.86 3.141 14 7 14C8.312 14 9.536 13.631 10.586 13L13.293 15.707C13.488 15.902 13.744 16 14 16C14.256 16 14.512 15.902 14.707 15.707L15.707 14.707C16.098 14.316 16.098 13.684 15.707 13.293ZM7 12C4.239 12 2 9.761 2 7C2 4.239 4.239 2 7 2C9.761 2 12 4.239 12 7C12 9.761 9.761 12 7 12Z"></path></svg></div><input type="text" id="search" placeholder="Search: ⌘ + K" class="MuiInputBase-input MuiInput-input jss28 MuiInputBase-inputAdornedStart" /></div><div class="links jss7"><a class="md-hide" target="_blank" rel="noreferrer" href="https://github.com/coder/code-server/issues/new/choose">Open Issue</a><a class="md-hide" href="/docs/code-server/latest/CONTRIBUTING">Contributing</a><a class="github-button" href="https://github.com/coder/code-server" target="_blank" rel="noreferrer" data-size="large" data-show-count="true" aria-label="Star cdr/code-server on GitHub">Star</a></div></div><div class="jss13"><button class="MuiButtonBase-root MuiButton-root MuiButton-text jss14 jss22 MuiButton-textSizeLarge MuiButton-sizeLarge" tabindex="0" type="button" aria-label="Search"><span class="MuiButton-label"><span><svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 16 16" aria-hidden="true"><path d="M15.707 13.293L13 10.586C13.63 9.536 14 8.311 14 7C14 3.14 10.859 0 7 0C3.141 0 0 3.14 0 7C0 10.86 3.141 14 7 14C8.312 14 9.536 13.631 10.586 13L13.293 15.707C13.488 15.902 13.744 16 14 16C14.256 16 14.512 15.902 14.707 15.707L15.707 14.707C16.098 14.316 16.098 13.684 15.707 13.293ZM7 12C4.239 12 2 9.761 2 7C2 4.239 4.239 2 7 2C9.761 2 12 4.239 12 7C12 9.761 9.761 12 7 12Z"></path></svg></span></span></button><button class="MuiButtonBase-root MuiButton-root MuiButton-text jss14 jss22 MuiButton-textSizeLarge MuiButton-sizeLarge" tabindex="0" type="button" aria-label="Toggle menu"><span class="MuiButton-label"><span><svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 16 15" aria-hidden="true"><path d="M16 0H0V3H16V0Z"></path><path d="M16 6H0V9H16V6Z"></path><path d="M16 12H0V15H16V12Z"></path></svg></span></span></button></div></div></header><section class="jss9"><div class="jss10 jss16 "><a aria-label="Docs" href="/docs/code-server/latest">docs</a><div class="jss12">/</div><div><div><button class="MuiButtonBase-root MuiButton-root MuiButton-contained jss19 jss11 jss22" tabindex="0" type="button" aria-controls="versions-menu" aria-haspopup="true"><span class="MuiButton-label"><span>code-server</span><span class="MuiButton-endIcon MuiButton-iconSizeMedium"><svg class="MuiSvgIcon-root jss20" focusable="false" viewBox="0 0 20 20" aria-hidden="true" style="fill:none" xmlns="http://www.w3.org/2000/svg"><path d="M18 7L10 15L2 7" stroke="currentColor" stroke-width="2" stroke-miterlimit="10"></path></svg></span></span></button></div></div></div></section><div class="jss1"><div class="jss2 false"><div><button class="MuiButtonBase-root MuiButton-root MuiButton-contained jss29 jss22 Mui-disabled Mui-disabled" tabindex="-1" type="button" disabled="" aria-controls="versions-menu" aria-haspopup="true"><span class="MuiButton-label"><span>v4.2.0</span></span></button></div><div class="jss35"><div class="jss36 0"><a class="link group 0 false false" href="/docs/code-server/latest"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16" width="16px" xml:space="preserve"><path d="M15.45,7L14,5.551V2c0-0.55-0.45-1-1-1h-1c-0.55,0-1,0.45-1,1v0.553L9,0.555C8.727,0.297,8.477,0,8,0S7.273,0.297,7,0.555  L0.55,7C0.238,7.325,0,7.562,0,8c0,0.563,0.432,1,1,1h1v6c0,0.55,0.45,1,1,1h3v-5c0-0.55,0.45-1,1-1h2c0.55,0,1,0.45,1,1v5h3  c0.55,0,1-0.45,1-1V9h1c0.568,0,1-0.437,1-1C16,7.562,15.762,7.325,15.45,7z"></path></svg></span><span class="title">Home</span></a><div class="jss37 ruler "><div class="wrapper"></div></div></div><div class="jss36 0"><a class="link group 0 false false" href="/docs/code-server/latest/requirements"><span><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 2V11H2V15C2 16.7 3.3 18 5 18H15C16.7 18 18 16.7 18 15V2H6ZM16 15C16 15.6 15.6 16 15 16H8V4H16V15Z" /><path d="M14 7H10V9H14V7Z" /><path d="M14 11H10V13H14V11Z" /></svg></span><span class="title">Requirements</span></a><div class="jss37 ruler "><div class="wrapper"></div></div></div><div class="jss36 0"><a class="link group 0 tree-active active" href="/docs/code-server/latest/install"><span><svg class="MuiSvgIcon-root jss172" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"></path></svg></span><span class="title">Install</span></a><div class="jss37 ruler active"><div class="wrapper"><div class="jss36 trailing"><a class="link single trailing false false" href="/docs/code-server/latest/npm"><span class="title">npm</span></a><div class="jss37  "><div class="wrapper"></div></div></div><div class="jss36 trailing"><a class="link single trailing false false" href="/docs/code-server/latest/helm"><span class="title">Helm</span></a><div class="jss37  "><div class="wrapper"></div></div></div></div></div></div><div class="jss36 0"><a class="link group 0 false false" href="/docs/code-server/latest/guide"><span><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 10l-2.5-1.5L15 12V4h5v8z"></path></svg></span><span class="title">Usage</span></a><div class="jss37 ruler "><div class="wrapper"><div class="jss36 trailing"><a class="link single trailing false false" href="/docs/code-server/latest/link"><span class="title">--link</span></a><div class="jss37  "><div class="wrapper"></div></div></div><div class="jss36 trailing"><a class="link single trailing false false" href="/docs/code-server/latest/ipad"><span class="title">iPad</span></a><div class="jss37  "><div class="wrapper"></div></div></div><div class="jss36 trailing"><a class="link single trailing false false" href="/docs/code-server/latest/termux"><span class="title">Termux</span></a><div class="jss37  "><div class="wrapper"></div></div></div><div class="jss36 trailing"><a class="link single trailing false false" href="/docs/code-server/latest/ios"><span class="title">iOS</span></a><div class="jss37  "><div class="wrapper"></div></div></div><div class="jss36 trailing"><a class="link single trailing false false" href="/docs/code-server/latest/android"><span class="title">Android</span></a><div class="jss37  "><div class="wrapper"></div></div></div></div></div></div><div class="jss36 0"><a class="link group 0 false false" href="/docs/code-server/latest/collaboration"><span><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M12.2 13.4357L9.5 11.4357C10.4 10.7357 11 9.7357 11 8.5357V7.7357C11 5.8357 9.6 4.1357 7.7 4.0357C5.7 3.9357 4 5.5357 4 7.5357V8.5357C4 9.7357 4.6 10.7357 5.5 11.4357L2.8 13.5357C2.3 13.9357 2 14.5357 2 15.1357V17.0357C2 17.6357 2.4 18.0357 3 18.0357H12C12.6 18.0357 13 17.6357 13 17.0357V15.0357C13 14.4357 12.7 13.8357 12.2 13.4357Z" /> <path d="M17.1 8.43436L15.3 7.23436C15.7 6.83436 16 6.23436 16 5.53436V4.63436C16 3.43436 15.1 2.23436 13.9 2.03436C12.7 1.83436 11.7 2.53436 11.2 3.43436C12.3 4.43436 13 5.83436 13 7.43436V8.43436C13 9.33436 12.8 10.2344 12.4 10.9344C12.4 10.9344 13.6 11.8344 13.6 11.9344H17C17.6 11.9344 18 11.5344 18 10.9344V10.1344C18 9.43436 17.7 8.83436 17.1 8.43436Z" /></svg></span><span class="title">Collaboration</span></a><div class="jss37 ruler "><div class="wrapper"></div></div></div><div class="jss36 0"><a class="link group 0 false false" href="/docs/code-server/latest/upgrade"><span><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.8049 2.19795C17.7385 2.1311 17.6587 2.07899 17.5708 2.04504C17.4829 2.01108 17.3889 1.99604 17.2948 2.00089C7.89216 2.49153 4.4188 10.8673 4.38528 10.9517C4.33624 11.0736 4.32406 11.2071 4.35028 11.3358C4.3765 11.4645 4.43995 11.5827 4.53274 11.6756L8.32449 15.4674C8.41787 15.5606 8.53669 15.6242 8.66606 15.6502C8.79543 15.6762 8.92959 15.6634 9.05174 15.6135C9.13552 15.5793 17.4664 12.0671 17.9986 2.7087C18.0039 2.61474 17.9895 2.5207 17.9561 2.4327C17.9227 2.3447 17.8712 2.26471 17.8049 2.19795ZM12.3314 9.56427C12.1439 9.75179 11.9051 9.87951 11.645 9.93126C11.385 9.98302 11.1154 9.9565 10.8704 9.85505C10.6254 9.7536 10.4161 9.58178 10.2687 9.36131C10.1214 9.14085 10.0428 8.88166 10.0428 8.6165C10.0428 8.35135 10.1214 8.09215 10.2687 7.87169C10.4161 7.65123 10.6254 7.47941 10.8704 7.37796C11.1154 7.27651 11.385 7.24998 11.645 7.30174C11.9051 7.3535 12.1439 7.48121 12.3314 7.66873C12.5827 7.92012 12.7239 8.26104 12.7239 8.6165C12.7239 8.97197 12.5827 9.31288 12.3314 9.56427Z" /><path d="M2.74602 14.5444C2.92281 14.3664 3.133 14.2251 3.36454 14.1285C3.59608 14.0319 3.8444 13.9819 4.09529 13.9815C4.34617 13.9811 4.59466 14.0.12 4.82653 14.126C5.05839 14.2218 5.26907 14.3624 5.44647 14.5398C5.62386 14.7172 5.7645 14.9279 5.86031 15.1598C5.95612 15.3916 6.00522 15.6401 6.00479 15.891C6.00437 16.1419 5.95442 16.3902 5.85782 16.6218C5.76122 16.8533 5.61987 17.0635 5.44186 17.2403C4.69719 17.985 2 18.0004 2 18.0004C2 18.0004 2 15.2884 2.74602 14.5444Z" /><path d="M8.9416 3.48269C7.99688 3.31826 7.02645 3.38371 6.11237 3.67352C5.19828 3.96332 4.36741 4.46894 3.68999 5.14765C3.33153 5.50944 3.01988 5.91477 2.76233 6.35415C2.68692 6.4822 2.6562 6.63169 2.67501 6.77911C2.69381 6.92652 2.76108 7.06351 2.86623 7.16853L4.1994 8.50238C5.43822 6.53634 7.04911 4.83119 8.9416 3.48269Z" /><path d="M16.5181 11.0585C16.6825 12.0033 16.6171 12.9737 16.3273 13.8878C16.0375 14.8019 15.5318 15.6327 14.8531 16.3101C14.4914 16.6686 14.086 16.9803 13.6466 17.2378C13.5186 17.3132 13.3691 17.3439 13.2217 17.3251C13.0743 17.3063 12.9373 17.2391 12.8323 17.1339L11.4984 15.8007C13.4645 14.5619 15.1696 12.951 16.5181 11.0585Z" /></svg></span><span class="title">Upgrade</span></a><div class="jss37 ruler "><div class="wrapper"></div></div></div><div class="jss36 0"><a class="link group 0 false false" href="/docs/code-server/latest/FAQ"><span><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.0001 18.3333C14.6025 18.3333 18.3334 14.6024 18.3334 10C18.3334 5.39762 14.6025 1.66666 10.0001 1.66666C5.39771 1.66666 1.66675 5.39762 1.66675 10C1.66675 14.6024 5.39771 18.3333 10.0001 18.3333Z" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><path d="M7.57495 7.5C7.77087 6.94306 8.15758 6.47342 8.66658 6.17428C9.17558 5.87513 9.77403 5.76578 10.3559 5.86559C10.9378 5.96541 11.4656 6.26794 11.8458 6.71961C12.2261 7.17128 12.4342 7.74294 12.4333 8.33333C12.4333 10 9.93328 10.8333 9.93328 10.8333" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><path d="M10 14.1667H10.0083" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg></span><span class="title">FAQ</span></a><div class="jss37 ruler "><div class="wrapper"></div></div></div><div class="jss36 0"><a class="link group 0 false false" href="/docs/code-server/latest/CONTRIBUTING"><span><svg width="20" height="20" fill="none" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M5 2.5V12.5" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><path d="M15 7.5C16.3807 7.5 17.5 6.38071 17.5 5C17.5 3.61929 16.3807 2.5 15 2.5C13.6193 2.5 12.5 3.61929 12.5 5C12.5 6.38071 13.6193 7.5 15 7.5Z" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><path d="M5 17.5C6.38071 17.5 7.5 16.3807 7.5 15C7.5 13.6193 6.38071 12.5 5 12.5C3.61929 12.5 2.5 13.6193 2.5 15C2.5 16.3807 3.61929 17.5 5 17.5Z" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><path d="M15 7.5C15 9.48912 14.2098 11.3968 12.8033 12.8033C11.3968 14.2098 9.48912 15 7.5 15" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg></span><span class="title">Contributing</span></a><div class="jss37 ruler "><div class="wrapper"><div class="jss36 trailing"><a class="link single trailing false false" href="/docs/code-server/latest/CODE_OF_CONDUCT"><span class="title">Code of conduct</span></a><div class="jss37  "><div class="wrapper"></div></div></div><div class="jss36 trailing"><a class="link single trailing false false" href="/docs/code-server/latest/MAINTAINING"><span class="title">Maintenance</span></a><div class="jss37  "><div class="wrapper"></div></div></div><div class="jss36 trailing"><a class="link single trailing false false" href="/docs/code-server/latest/triage"><span class="title">Triage</span></a><div class="jss37  "><div class="wrapper"></div></div></div><div class="jss36 trailing"><a class="link single trailing false false" href="/docs/code-server/latest/SECURITY"><span class="title">Security</span></a><div class="jss37  "><div class="wrapper"></div></div></div></div></div></div></div></div><div class="jss3"><div class="jss4"><section class="jss38 "><div class="jss41"><div class="jss42">Need code-server for a team?<!-- --> <a href="/#try-coder?utm_source=docs&amp;utm_medium=docs&amp;utm_campaign=install">Now you can run Coder in Docker. Free trial for 5 users</a></div><button class="MuiButtonBase-root MuiIconButton-root jss43 MuiIconButton-sizeSmall" tabindex="0" type="button"><span class="MuiIconButton-label"><svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 20 20" aria-hidden="true" width="20" height="20"><rect x="5.75735" y="4.34315" width="14" height="2" transform="rotate(45 5.75735 4.34315)"></rect><rect x="15.6569" y="5.75737" width="14" height="2" transform="rotate(135 15.6569 5.75737)"></rect></svg></span></button></div><div class="crumbs jss44"><a class="jss45" title="Home" href="/docs/code-server/latest">Home</a></div><header><div class="MuiBox-root jss47 top"><h1>Install</h1><div class="reading-time"><svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"></path><path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"></path></svg>8 min read</div></div><p class="description">How to install code-server.</p></header><div class="jss40">
+<!-- -->
+<h1 id="install"><a href="#install"><span class="icon icon-link"></span></a>Install</h1>
+<ul>
+<li><a href="#installsh">install.sh</a>
+<ul>
+<li><a href="#detection-reference">Detection reference</a></li>
+</ul>
+</li>
+<li><a href="#npm">npm</a></li>
+<li><a href="#standalone-releases">Standalone releases</a></li>
+<li><a href="#debian-ubuntu">Debian, Ubuntu</a></li>
+<li><a href="#fedora-centos-rhel-suse">Fedora, CentOS, RHEL, SUSE</a></li>
+<li><a href="#arch-linux">Arch Linux</a></li>
+<li><a href="#macos">macOS</a></li>
+<li><a href="#docker">Docker</a></li>
+<li><a href="#helm">Helm</a></li>
+<li><a href="#windows">Windows</a></li>
+<li><a href="#raspberry-pi">Raspberry Pi</a></li>
+<li><a href="#termux">Termux</a></li>
+<li><a href="#cloud-providers">Cloud providers</a></li>
+<li><a href="#uninstall">Uninstall</a>
+<ul>
+<li><a href="#installsh-1">install.sh</a></li>
+<li><a href="#homebrew">Homebrew</a></li>
+<li><a href="#npm-1">npm</a></li>
+<li><a href="#debian-ubuntu-1">Debian, Ubuntu</a></li>
+</ul>
+</li>
+</ul>
+<!-- -->
+<p>This document demonstrates how to install <code>code-server</code> on various distros and
+operating systems.</p>
+<h2 id="installsh"><a href="#installsh"><span class="icon icon-link"></span></a>install.sh</h2>
+<p>The easiest way to install code-server is to use our <a target="_blank" rel="noopener" href="https://github.com/coder/code-server/blob/main/install.sh">install
+script</a> for Linux, macOS and FreeBSD. The install script
+<a href="#detection-reference">attempts to use the system package manager</a> if possible.</p>
+<p>You can preview what occurs during the install process:</p>
+<div class="jss49"><pre><code class="hljs language-bash">curl -fsSL https://code-server.dev/install.sh | sh -s -- --dry-run
+</code></pre><button class="MuiButtonBase-root MuiButton-root MuiButton-contained jss50 jss22 MuiButton-containedSizeSmall MuiButton-sizeSmall" tabindex="0" type="button"><span class="MuiButton-label"><span class="MuiButton-startIcon MuiButton-iconSizeSmall"><svg class="MuiSvgIcon-root jss51" focusable="false" viewBox="0 0 20 20" aria-hidden="true" width="20" height="20"><path d="M13 14H3C2.447 14 2 13.553 2 13V3C2 2.448 2.447 2 3 2H13C13.553 2 14 2.448 14 3V13C14 13.553 13.553 14 13 14Z"></path><path d="M17 18H6V16H16V6H18V17C18 17.553 17.553 18 17 18Z"></path></svg></span><span>Copy</span></span></button></div>
+<p>To install, run:</p>
+<div class="jss49"><pre><code class="hljs language-bash">curl -fsSL https://code-server.dev/install.sh | sh
+</code></pre><button class="MuiButtonBase-root MuiButton-root MuiButton-contained jss50 jss22 MuiButton-containedSizeSmall MuiButton-sizeSmall" tabindex="0" type="button"><span class="MuiButton-label"><span class="MuiButton-startIcon MuiButton-iconSizeSmall"><svg class="MuiSvgIcon-root jss51" focusable="false" viewBox="0 0 20 20" aria-hidden="true" width="20" height="20"><path d="M13 14H3C2.447 14 2 13.553 2 13V3C2 2.448 2.447 2 3 2H13C13.553 2 14 2.448 14 3V13C14 13.553 13.553 14 13 14Z"></path><path d="M17 18H6V16H16V6H18V17C18 17.553 17.553 18 17 18Z"></path></svg></span><span>Copy</span></span></button></div>
+<p>You can modify the installation process by including one or more of the
+following flags:</p>
+<ul>
+<li><code>--dry-run</code>: echo the commands for the install process without running them.</li>
+<li><code>--method</code>: choose the installation method.
+<ul>
+<li><code>--method=detect</code>: detect the package manager but fallback to
+<code>--method=standalone</code>.</li>
+<li><code>--method=standalone</code>: install a standalone release archive into <code>~/.local</code>.</li>
+</ul>
+</li>
+<li><code>--prefix=/usr/local</code>: install a standalone release archive system-wide.</li>
+<li><code>--version=X.X.X</code>: install version <code>X.X.X</code> instead of latest version.</li>
+<li><code>--help</code>: see usage docs.</li>
+</ul>
+<p>When done, the install script prints out instructions for running and starting
+code-server.</p>
+<blockquote>
+<p>If you&#x27;re concerned about the install script&#x27;s use of <code>curl | sh</code> and the
+security implications, please see <a target="_blank" rel="noopener" href="https://sandstorm.io/news/2015-09-24-is-curl-bash-insecure-pgp-verified-install">this blog
+post</a>
+by <a target="_blank" rel="noopener" href="https://sandstorm.io">sandstorm.io</a>.</p>
+</blockquote>
+<p>If you prefer to install code-server manually, despite the <a href="#detection-reference">detection
+references</a> and <code>--dry-run</code> feature, then continue on for
+information on how to do this. The <a target="_blank" rel="noopener" href="https://github.com/coder/code-server/blob/main/install.sh"><code>install.sh</code></a> script runs the
+<em>exact</em> same commands presented in the rest of this document.</p>
+<h3 id="detection-reference"><a href="#detection-reference"><span class="icon icon-link"></span></a>Detection reference</h3>
+<ul>
+<li>
+<p>For Debian and Ubuntu, code-server will install the latest deb package.</p>
+</li>
+<li>
+<p>For Fedora, CentOS, RHEL and openSUSE, code-server will install the latest RPM
+package.</p>
+</li>
+<li>
+<p>For Arch Linux, code-server will install the AUR package.</p>
+</li>
+<li>
+<p>For any unrecognized Linux operating system, code-server will install the
+latest standalone release into <code>~/.local</code>.</p>
+<ul>
+<li>Ensure that you add <code>~/.local/bin</code> to your <code>$PATH</code> to run code-server.</li>
+</ul>
+</li>
+<li>
+<p>For macOS, code-server will install the Homebrew package (if you don&#x27;t have
+Homebrew installed, code-server will install the latest standalone release
+into <code>~/.local</code>).</p>
+<ul>
+<li>Ensure that you add <code>~/.local/bin</code> to your <code>$PATH</code> to run code-server.</li>
+</ul>
+</li>
+<li>
+<p>For FreeBSD, code-server will install the <a href="#npm">npm package</a> with <code>npm</code>.</p>
+</li>
+<li>
+<p>If you&#x27;re installing code-server onto architecture with no releases,
+code-server will install the <a href="#npm">npm package</a> with <code>npm</code></p>
+<ul>
+<li>We currently offer releases for amd64 and arm64.</li>
+<li>The <a href="#npm">npm package</a> builds the native modules on post-install.</li>
+</ul>
+</li>
+</ul>
+<h2 id="npm"><a href="#npm"><span class="icon icon-link"></span></a>npm</h2>
+<p>We recommend installing with <code>npm</code> when:</p>
+<ol>
+<li>You aren&#x27;t using a machine with <code>amd64</code> or <code>arm64</code>.</li>
+<li>You are installing code-server on Windows</li>
+<li>You&#x27;re on Linux with <code>glibc</code> &lt; v2.17, <code>glibcxx</code> &lt; v3.4.18 on <code>amd64</code>, <code>glibc</code>
+&lt; v2.23, or <code>glibcxx</code> &lt; v3.4.21 on <code>arm64</code>.</li>
+<li>You&#x27;re running Alpine Linux or are using a non-glibc libc. See
+<a target="_blank" rel="noopener" href="https://github.com/coder/code-server/issues/1430#issuecomment-629883198">#1430</a>
+for more information.</li>
+</ol>
+<p>Installing code-server with <code>npm</code> builds native modules on install.</p>
+<p>This process requires C dependencies; see our guide on [installing with <code>npm</code>]<a href="/docs/code-server/latest/npm">./npm.md</a> for more information.</p>
+<h2 id="standalone-releases"><a href="#standalone-releases"><span class="icon icon-link"></span></a>Standalone releases</h2>
+<p>We publish self-contained <code>.tar.gz</code> archives for every release on
+<a target="_blank" rel="noopener" href="https://github.com/coder/code-server/releases">GitHub</a>. The archives bundle the
+node binary and node modules.</p>
+<p>We create the standalone releases using the <a href="#npm">npm package</a>, and we
+then create the remaining releases using the standalone version.</p>
+<p>The only requirement to use the standalone release is <code>glibc</code> &gt;= 2.17 and
+<code>glibcxx</code> &gt;= v3.4.18 on Linux (for macOS, there is no minimum system
+requirement).</p>
+<p>To use a standalone release:</p>
+<ol>
+<li>Download the latest release archive for your system from
+<a target="_blank" rel="noopener" href="https://github.com/coder/code-server/releases">GitHub</a>.</li>
+<li>Unpack the release.</li>
+<li>Run code-server by executing <code>./bin/code-server</code>.</li>
+</ol>
+<p>You can add <code>./bin/code-server</code> to your <code>$PATH</code> so that you can execute
+<code>code-server</code> without providing full path each time.</p>
+<p>Here is a sample script for installing and using a standalone code-server
+release on Linux:</p>
+<div class="jss49"><pre><code class="hljs language-bash">mkdir -p ~/.<span class="hljs-built_in">local</span>/lib ~/.<span class="hljs-built_in">local</span>/bin
+curl -fL https://github.com/coder/code-server/releases/download/v<span class="hljs-variable">$VERSION</span>/code-server-<span class="hljs-variable">$VERSION</span>-linux-amd64.tar.gz \
+  | tar -C ~/.<span class="hljs-built_in">local</span>/lib -xz
+mv ~/.<span class="hljs-built_in">local</span>/lib/code-server-<span class="hljs-variable">$VERSION</span>-linux-amd64 ~/.<span class="hljs-built_in">local</span>/lib/code-server-<span class="hljs-variable">$VERSION</span>
+ln -s ~/.<span class="hljs-built_in">local</span>/lib/code-server-<span class="hljs-variable">$VERSION</span>/bin/code-server ~/.<span class="hljs-built_in">local</span>/bin/code-server
+PATH=<span class="hljs-string">&quot;~/.local/bin:<span class="hljs-variable">$PATH</span>&quot;</span>
+code-server
+<span class="hljs-comment"># Now visit http://127.0.0.1:8080. Your password is in ~/.config/code-server/config.yaml</span>
+</code></pre><button class="MuiButtonBase-root MuiButton-root MuiButton-contained jss50 jss22 MuiButton-containedSizeSmall MuiButton-sizeSmall" tabindex="0" type="button"><span class="MuiButton-label"><span class="MuiButton-startIcon MuiButton-iconSizeSmall"><svg class="MuiSvgIcon-root jss51" focusable="false" viewBox="0 0 20 20" aria-hidden="true" width="20" height="20"><path d="M13 14H3C2.447 14 2 13.553 2 13V3C2 2.448 2.447 2 3 2H13C13.553 2 14 2.448 14 3V13C14 13.553 13.553 14 13 14Z"></path><path d="M17 18H6V16H16V6H18V17C18 17.553 17.553 18 17 18Z"></path></svg></span><span>Copy</span></span></button></div>
+<h2 id="debian-ubuntu"><a href="#debian-ubuntu"><span class="icon icon-link"></span></a>Debian, Ubuntu</h2>
+<blockquote>
+<p>The standalone arm64 .deb does not support Ubuntu 16.04 or earlier. Please
+upgrade or <a href="#npm">build with <code>npm</code></a>.</p>
+</blockquote>
+<div class="jss49"><pre><code class="hljs language-bash">curl -fOL https://github.com/coder/code-server/releases/download/v<span class="hljs-variable">$VERSION</span>/code-server_<span class="hljs-variable">$VERSION_amd64</span>.deb
+sudo dpkg -i code-server_<span class="hljs-variable">$VERSION_amd64</span>.deb
+sudo systemctl <span class="hljs-built_in">enable</span> --now <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b6d5d9d2d39bc5d3c4c0d3c4f6">[email&#160;protected]</a><span class="hljs-variable">$USER</span>
+<span class="hljs-comment"># Now visit http://127.0.0.1:8080. Your password is in ~/.config/code-server/config.yaml</span>
+</code></pre><button class="MuiButtonBase-root MuiButton-root MuiButton-contained jss50 jss22 MuiButton-containedSizeSmall MuiButton-sizeSmall" tabindex="0" type="button"><span class="MuiButton-label"><span class="MuiButton-startIcon MuiButton-iconSizeSmall"><svg class="MuiSvgIcon-root jss51" focusable="false" viewBox="0 0 20 20" aria-hidden="true" width="20" height="20"><path d="M13 14H3C2.447 14 2 13.553 2 13V3C2 2.448 2.447 2 3 2H13C13.553 2 14 2.448 14 3V13C14 13.553 13.553 14 13 14Z"></path><path d="M17 18H6V16H16V6H18V17C18 17.553 17.553 18 17 18Z"></path></svg></span><span>Copy</span></span></button></div>
+<h2 id="fedora-centos-rhel-suse"><a href="#fedora-centos-rhel-suse"><span class="icon icon-link"></span></a>Fedora, CentOS, RHEL, SUSE</h2>
+<blockquote>
+<p>The standalone arm64 .rpm does not support CentOS 7. Please upgrade or <a href="#npm">build
+with <code>npm</code></a>.</p>
+</blockquote>
+<div class="jss49"><pre><code class="hljs language-bash">curl -fOL https://github.com/coder/code-server/releases/download/v<span class="hljs-variable">$VERSION</span>/code-server-<span class="hljs-variable">$VERSION</span>-amd64.rpm
+sudo rpm -i code-server-<span class="hljs-variable">$VERSION</span>-amd64.rpm
+sudo systemctl <span class="hljs-built_in">enable</span> --now <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="385b575c5d154b5d4a4e5d4a78">[email&#160;protected]</a><span class="hljs-variable">$USER</span>
+<span class="hljs-comment"># Now visit http://127.0.0.1:8080. Your password is in ~/.config/code-server/config.yaml</span>
+</code></pre><button class="MuiButtonBase-root MuiButton-root MuiButton-contained jss50 jss22 MuiButton-containedSizeSmall MuiButton-sizeSmall" tabindex="0" type="button"><span class="MuiButton-label"><span class="MuiButton-startIcon MuiButton-iconSizeSmall"><svg class="MuiSvgIcon-root jss51" focusable="false" viewBox="0 0 20 20" aria-hidden="true" width="20" height="20"><path d="M13 14H3C2.447 14 2 13.553 2 13V3C2 2.448 2.447 2 3 2H13C13.553 2 14 2.448 14 3V13C14 13.553 13.553 14 13 14Z"></path><path d="M17 18H6V16H16V6H18V17C18 17.553 17.553 18 17 18Z"></path></svg></span><span>Copy</span></span></button></div>
+<h2 id="arch-linux"><a href="#arch-linux"><span class="icon icon-link"></span></a>Arch Linux</h2>
+<div class="jss49"><pre><code class="hljs language-bash"><span class="hljs-comment"># Install code-server from the AUR using yay.</span>
+yay -S code-server
+sudo systemctl <span class="hljs-built_in">enable</span> --now <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="99faf6fdfcb4eafcebeffcebd9">[email&#160;protected]</a><span class="hljs-variable">$USER</span>
+<span class="hljs-comment"># Now visit http://127.0.0.1:8080. Your password is in ~/.config/code-server/config.yaml</span>
+</code></pre><button class="MuiButtonBase-root MuiButton-root MuiButton-contained jss50 jss22 MuiButton-containedSizeSmall MuiButton-sizeSmall" tabindex="0" type="button"><span class="MuiButton-label"><span class="MuiButton-startIcon MuiButton-iconSizeSmall"><svg class="MuiSvgIcon-root jss51" focusable="false" viewBox="0 0 20 20" aria-hidden="true" width="20" height="20"><path d="M13 14H3C2.447 14 2 13.553 2 13V3C2 2.448 2.447 2 3 2H13C13.553 2 14 2.448 14 3V13C14 13.553 13.553 14 13 14Z"></path><path d="M17 18H6V16H16V6H18V17C18 17.553 17.553 18 17 18Z"></path></svg></span><span>Copy</span></span></button></div>
+<div class="jss49"><pre><code class="hljs language-bash"><span class="hljs-comment"># Install code-server from the AUR with plain makepkg.</span>
+git <span class="hljs-built_in">clone</span> https://aur.archlinux.org/code-server.git
+<span class="hljs-built_in">cd</span> code-server
+makepkg -si
+sudo systemctl <span class="hljs-built_in">enable</span> --now <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a8cbc7cccd85dbcddadecddae8">[email&#160;protected]</a><span class="hljs-variable">$USER</span>
+<span class="hljs-comment"># Now visit http://127.0.0.1:8080. Your password is in ~/.config/code-server/config.yaml</span>
+</code></pre><button class="MuiButtonBase-root MuiButton-root MuiButton-contained jss50 jss22 MuiButton-containedSizeSmall MuiButton-sizeSmall" tabindex="0" type="button"><span class="MuiButton-label"><span class="MuiButton-startIcon MuiButton-iconSizeSmall"><svg class="MuiSvgIcon-root jss51" focusable="false" viewBox="0 0 20 20" aria-hidden="true" width="20" height="20"><path d="M13 14H3C2.447 14 2 13.553 2 13V3C2 2.448 2.447 2 3 2H13C13.553 2 14 2.448 14 3V13C14 13.553 13.553 14 13 14Z"></path><path d="M17 18H6V16H16V6H18V17C18 17.553 17.553 18 17 18Z"></path></svg></span><span>Copy</span></span></button></div>
+<h2 id="macos"><a href="#macos"><span class="icon icon-link"></span></a>macOS</h2>
+<div class="jss49"><pre><code class="hljs language-bash">brew install code-server
+brew services start code-server
+<span class="hljs-comment"># Now visit http://127.0.0.1:8080. Your password is in ~/.config/code-server/config.yaml</span>
+</code></pre><button class="MuiButtonBase-root MuiButton-root MuiButton-contained jss50 jss22 MuiButton-containedSizeSmall MuiButton-sizeSmall" tabindex="0" type="button"><span class="MuiButton-label"><span class="MuiButton-startIcon MuiButton-iconSizeSmall"><svg class="MuiSvgIcon-root jss51" focusable="false" viewBox="0 0 20 20" aria-hidden="true" width="20" height="20"><path d="M13 14H3C2.447 14 2 13.553 2 13V3C2 2.448 2.447 2 3 2H13C13.553 2 14 2.448 14 3V13C14 13.553 13.553 14 13 14Z"></path><path d="M17 18H6V16H16V6H18V17C18 17.553 17.553 18 17 18Z"></path></svg></span><span>Copy</span></span></button></div>
+<h2 id="docker"><a href="#docker"><span class="icon icon-link"></span></a>Docker</h2>
+<div class="jss49"><pre><code class="hljs language-bash"><span class="hljs-comment"># This will start a code-server container and expose it at http://127.0.0.1:8080.</span>
+<span class="hljs-comment"># It will also mount your current directory into the container as `/home/coder/project`</span>
+<span class="hljs-comment"># and forward your UID/GID so that all file system operations occur as your user outside</span>
+<span class="hljs-comment"># the container.</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment"># Your $HOME/.config is mounted at $HOME/.config within the container to ensure you can</span>
+<span class="hljs-comment"># easily access/modify your code-server config in $HOME/.config/code-server/config.json</span>
+<span class="hljs-comment"># outside the container.</span>
+mkdir -p ~/.config
+docker run -it --name code-server -p 127.0.0.1:8080:8080 \
+  -v <span class="hljs-string">&quot;<span class="hljs-variable">$HOME</span>/.config:/home/coder/.config&quot;</span> \
+  -v <span class="hljs-string">&quot;<span class="hljs-variable">$PWD</span>:/home/coder/project&quot;</span> \
+  -u <span class="hljs-string">&quot;<span class="hljs-subst">$(id -u)</span>:<span class="hljs-subst">$(id -g)</span>&quot;</span> \
+  -e <span class="hljs-string">&quot;DOCKER_USER=<span class="hljs-variable">$USER</span>&quot;</span> \
+  codercom/code-server:latest
+</code></pre><button class="MuiButtonBase-root MuiButton-root MuiButton-contained jss50 jss22 MuiButton-containedSizeSmall MuiButton-sizeSmall" tabindex="0" type="button"><span class="MuiButton-label"><span class="MuiButton-startIcon MuiButton-iconSizeSmall"><svg class="MuiSvgIcon-root jss51" focusable="false" viewBox="0 0 20 20" aria-hidden="true" width="20" height="20"><path d="M13 14H3C2.447 14 2 13.553 2 13V3C2 2.448 2.447 2 3 2H13C13.553 2 14 2.448 14 3V13C14 13.553 13.553 14 13 14Z"></path><path d="M17 18H6V16H16V6H18V17C18 17.553 17.553 18 17 18Z"></path></svg></span><span>Copy</span></span></button></div>
+<p>Our official image supports <code>amd64</code> and <code>arm64</code>. For <code>arm32</code> support, you can
+use a <a target="_blank" rel="noopener" href="https://hub.docker.com/r/linuxserver/code-server">community-maintained code-server
+alternative</a>.</p>
+<h2 id="helm"><a href="#helm"><span class="icon icon-link"></span></a>Helm</h2>
+<p>You can install code-server using the <a target="_blank" rel="noopener" href="https://coder.com/docs/code-server/latest/helm">Helm package manager</a>.</p>
+<h2 id="windows"><a href="#windows"><span class="icon icon-link"></span></a>Windows</h2>
+<p>We currently <a target="_blank" rel="noopener" href="https://github.com/coder/code-server/issues/1397">do not publish Windows releases</a>. We recommend installing code-server onto Windows with <a href="#npm"><code>npm</code></a>.</p>
+<blockquote>
+<p>Note: You will also need to <a target="_blank" rel="noopener" href="https://github.com/coder/cloud-agent/issues/17">build coder/cloud-agent manually</a> if you would like to use <code>code-server --link</code> on Windows.</p>
+</blockquote>
+<h2 id="raspberry-pi"><a href="#raspberry-pi"><span class="icon icon-link"></span></a>Raspberry Pi</h2>
+<p>We recommend installing code-server onto Raspberry Pi with <a href="#npm"><code>npm</code></a>.</p>
+<h2 id="termux"><a href="#termux"><span class="icon icon-link"></span></a>Termux</h2>
+<p>Please see code-server&#x27;s <a href="/docs/code-server/latest/termux#installation">Termux docs</a> for more
+information.</p>
+<h2 id="cloud-providers"><a href="#cloud-providers"><span class="icon icon-link"></span></a>Cloud providers</h2>
+<p>We maintain <a target="_blank" rel="noopener" href="https://github.com/coder/deploy-code-server">one-click apps and install scripts for cloud
+providers</a> such as DigitalOcean,
+Railway, Heroku, and Azure.</p>
+<h2 id="uninstall"><a href="#uninstall"><span class="icon icon-link"></span></a>Uninstall</h2>
+<p>code-server can be completely uninstalled by removing the application directory, and your user configuration directory.</p>
+<p>To delete settings and data:</p>
+<div class="jss49"><pre><code class="hljs language-shell">rm -rf ~/.local/share/code-server ~/.config/code-server
+</code></pre><button class="MuiButtonBase-root MuiButton-root MuiButton-contained jss50 jss22 MuiButton-containedSizeSmall MuiButton-sizeSmall" tabindex="0" type="button"><span class="MuiButton-label"><span class="MuiButton-startIcon MuiButton-iconSizeSmall"><svg class="MuiSvgIcon-root jss51" focusable="false" viewBox="0 0 20 20" aria-hidden="true" width="20" height="20"><path d="M13 14H3C2.447 14 2 13.553 2 13V3C2 2.448 2.447 2 3 2H13C13.553 2 14 2.448 14 3V13C14 13.553 13.553 14 13 14Z"></path><path d="M17 18H6V16H16V6H18V17C18 17.553 17.553 18 17 18Z"></path></svg></span><span>Copy</span></span></button></div>
+<h3 id="installsh-1"><a href="#installsh-1"><span class="icon icon-link"></span></a>install.sh</h3>
+<p>If you installed with the install script, by default code-server will be in <code>~/.local/lib/code-server-&lt;version&gt;</code> and you can remove it with <code>rm -rf</code>. e.g.</p>
+<div class="jss49"><pre><code class="hljs language-shell">rm -rf ~/.local/lib/code-server-*
+</code></pre><button class="MuiButtonBase-root MuiButton-root MuiButton-contained jss50 jss22 MuiButton-containedSizeSmall MuiButton-sizeSmall" tabindex="0" type="button"><span class="MuiButton-label"><span class="MuiButton-startIcon MuiButton-iconSizeSmall"><svg class="MuiSvgIcon-root jss51" focusable="false" viewBox="0 0 20 20" aria-hidden="true" width="20" height="20"><path d="M13 14H3C2.447 14 2 13.553 2 13V3C2 2.448 2.447 2 3 2H13C13.553 2 14 2.448 14 3V13C14 13.553 13.553 14 13 14Z"></path><path d="M17 18H6V16H16V6H18V17C18 17.553 17.553 18 17 18Z"></path></svg></span><span>Copy</span></span></button></div>
+<h3 id="homebrew"><a href="#homebrew"><span class="icon icon-link"></span></a>Homebrew</h3>
+<p>To remove the code-server homebrew package, run:</p>
+<div class="jss49"><pre><code class="hljs language-shell">brew remove code-server
+<span class="hljs-meta">
+#</span><span class="bash"> Alternatively</span>
+brew uninstall code-server
+</code></pre><button class="MuiButtonBase-root MuiButton-root MuiButton-contained jss50 jss22 MuiButton-containedSizeSmall MuiButton-sizeSmall" tabindex="0" type="button"><span class="MuiButton-label"><span class="MuiButton-startIcon MuiButton-iconSizeSmall"><svg class="MuiSvgIcon-root jss51" focusable="false" viewBox="0 0 20 20" aria-hidden="true" width="20" height="20"><path d="M13 14H3C2.447 14 2 13.553 2 13V3C2 2.448 2.447 2 3 2H13C13.553 2 14 2.448 14 3V13C14 13.553 13.553 14 13 14Z"></path><path d="M17 18H6V16H16V6H18V17C18 17.553 17.553 18 17 18Z"></path></svg></span><span>Copy</span></span></button></div>
+<h3 id="npm-1"><a href="#npm-1"><span class="icon icon-link"></span></a>npm</h3>
+<p>To remove the code-server global module, run:</p>
+<div class="jss49"><pre><code class="hljs language-shell">npm uninstall -g code-server
+</code></pre><button class="MuiButtonBase-root MuiButton-root MuiButton-contained jss50 jss22 MuiButton-containedSizeSmall MuiButton-sizeSmall" tabindex="0" type="button"><span class="MuiButton-label"><span class="MuiButton-startIcon MuiButton-iconSizeSmall"><svg class="MuiSvgIcon-root jss51" focusable="false" viewBox="0 0 20 20" aria-hidden="true" width="20" height="20"><path d="M13 14H3C2.447 14 2 13.553 2 13V3C2 2.448 2.447 2 3 2H13C13.553 2 14 2.448 14 3V13C14 13.553 13.553 14 13 14Z"></path><path d="M17 18H6V16H16V6H18V17C18 17.553 17.553 18 17 18Z"></path></svg></span><span>Copy</span></span></button></div>
+<h3 id="debian-ubuntu-1"><a href="#debian-ubuntu-1"><span class="icon icon-link"></span></a>Debian, Ubuntu</h3>
+<p>To uninstall, run:</p>
+<div class="jss49"><pre><code class="hljs language-shell">sudo apt remove code-server
+</code></pre><button class="MuiButtonBase-root MuiButton-root MuiButton-contained jss50 jss22 MuiButton-containedSizeSmall MuiButton-sizeSmall" tabindex="0" type="button"><span class="MuiButton-label"><span class="MuiButton-startIcon MuiButton-iconSizeSmall"><svg class="MuiSvgIcon-root jss51" focusable="false" viewBox="0 0 20 20" aria-hidden="true" width="20" height="20"><path d="M13 14H3C2.447 14 2 13.553 2 13V3C2 2.448 2.447 2 3 2H13C13.553 2 14 2.448 14 3V13C14 13.553 13.553 14 13 14Z"></path><path d="M17 18H6V16H16V6H18V17C18 17.553 17.553 18 17 18Z"></path></svg></span><span>Copy</span></span></button></div></div><div class="jss52"><div class="jss53"><div class="jss54"><div class="jss55"><svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 438.529 438.529" aria-hidden="true"><path d="M349.459,52.534c-10.663-10.657-23.605-15.987-38.834-15.987c-15.222,0-28.165,5.327-38.825,15.987 c-10.656,10.657-15.984,23.598-15.984,38.828c0,9.897,2.467,19.081,7.416,27.55c4.948,8.47,11.604,15.086,19.985,19.842 c0,9.897-0.805,18.608-2.42,26.125c-1.622,7.517-4.284,14.128-7.994,19.842c-3.72,5.711-7.566,10.561-11.566,14.56 c-4.001,3.999-9.616,7.755-16.848,11.278c-7.231,3.521-13.945,6.468-20.129,8.851c-6.184,2.375-14.514,5.182-24.982,8.419 c-19.036,5.903-33.689,11.323-43.968,16.275V102.206c8.375-4.755,15.037-11.37,19.985-19.84c4.947-8.47,7.421-17.655,7.421-27.552 c0-15.225-5.327-28.169-15.987-38.826C156.073,5.332,143.132,0,127.903,0c-15.23,0-28.171,5.328-38.831,15.988 C78.416,26.645,73.085,39.589,73.085,54.814c0,9.897,2.474,19.082,7.421,27.552c4.948,8.47,11.609,15.085,19.985,19.84v234.117 c-8.376,4.753-15.037,11.375-19.985,19.842c-4.947,8.473-7.421,17.658-7.421,27.552c0,15.225,5.327,28.168,15.987,38.824 s23.604,15.988,38.831,15.988c15.226,0,28.17-5.332,38.826-15.988c10.657-10.656,15.987-23.6,15.987-38.824 c0-9.894-2.474-19.079-7.421-27.552c-4.949-8.467-11.61-15.089-19.985-19.842V328.9c0-13.131,3.949-22.645,11.847-28.544 c7.898-5.907,24.029-12.662,48.395-20.273c25.699-8.186,45.021-15.899,57.963-23.134c42.633-24.167,64.142-63.568,64.521-118.196 c8.381-4.755,15.037-11.372,19.985-19.842c4.945-8.47,7.423-17.653,7.423-27.55C365.447,76.135,360.116,63.194,349.459,52.534z M147.321,403.138c-5.332,5.331-11.803,7.994-19.414,7.994c-7.616,0-14.087-2.663-19.417-7.994 c-5.327-5.325-7.994-11.8-7.994-19.411c0-7.617,2.664-14.085,7.994-19.417c5.33-5.328,11.801-7.994,19.417-7.994 c7.611,0,14.083,2.669,19.414,7.994c5.33,5.332,7.993,11.8,7.993,19.417C155.313,391.338,152.651,397.812,147.321,403.138z M147.321,74.232c-5.332,5.33-11.803,7.994-19.414,7.994c-7.616,0-14.087-2.664-19.417-7.994 c-5.327-5.33-7.994-11.798-7.994-19.414c0-7.614,2.664-14.087,7.994-19.412c5.33-5.329,11.801-7.994,19.417-7.994 c7.611,0,14.083,2.666,19.414,7.994c5.33,5.325,7.993,11.798,7.993,19.412C155.313,62.434,152.651,68.905,147.321,74.232z M330.042,110.779c-5.328,5.327-11.796,7.993-19.41,7.993c-7.618,0-14.09-2.666-19.414-7.993 c-5.328-5.327-7.994-11.799-7.994-19.414c0-7.614,2.666-14.083,7.994-19.414s11.796-7.993,19.414-7.993 c7.614,0,14.082,2.663,19.41,7.993c5.328,5.326,7.994,11.799,7.994,19.414C338.036,98.979,335.374,105.452,330.042,110.779z"></path></svg><p class="MuiTypography-root MuiTypography-body2">See an opportunity to improve our docs? <a href="https://github.com/cdr/code-server/edit/main/docs/install.md" rel="noreferrer" target="_blank">Make an edit.</a></p></div></div><div class="jss56"><svg viewBox="0 0 341 75" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo"><path d="M176.753 32.7584H165.554C165.35 31.3095 164.932 30.0226 164.301 28.8976C163.671 27.7555 162.861 26.7839 161.872 25.9828C160.884 25.1817 159.742 24.568 158.446 24.1419C157.168 23.7158 155.779 23.5027 154.279 23.5027C151.568 23.5027 149.208 24.176 147.196 25.5226C145.185 26.8521 143.625 28.7953 142.517 31.3521C141.409 33.8919 140.855 36.9771 140.855 40.6078C140.855 44.3408 141.409 47.4771 142.517 50.0169C143.642 52.5567 145.21 54.4743 147.222 55.7697C149.233 57.0652 151.56 57.7129 154.202 57.7129C155.685 57.7129 157.057 57.5169 158.318 57.1249C159.597 56.7328 160.73 56.1618 161.719 55.4118C162.708 54.6447 163.526 53.7158 164.173 52.6249C164.838 51.534 165.298 50.2896 165.554 48.8919L176.753 48.943C176.463 51.3464 175.739 53.6646 174.58 55.8976C173.438 58.1135 171.895 60.0993 169.952 61.855C168.026 63.5936 165.725 64.9743 163.048 65.997C160.389 67.0027 157.381 67.5055 154.023 67.5055C149.352 67.5055 145.176 66.4487 141.494 64.3351C137.83 62.2214 134.932 59.1618 132.801 55.1561C130.688 51.1504 129.631 46.301 129.631 40.6078C129.631 34.8976 130.705 30.0396 132.852 26.0339C135 22.0283 137.915 18.9771 141.597 16.8805C145.279 14.7669 149.421 13.7101 154.023 13.7101C157.057 13.7101 159.869 14.1362 162.46 14.9885C165.068 15.8408 167.378 17.0851 169.389 18.7214C171.401 20.3408 173.037 22.3266 174.298 24.6788C175.577 27.0311 176.395 29.7243 176.753 32.7584Z"></path><path d="M202.032 67.5567C198.06 67.5567 194.625 66.7129 191.728 65.0254C188.847 63.3209 186.623 60.9516 185.054 57.9175C183.486 54.8663 182.702 51.3294 182.702 47.3067C182.702 43.2499 183.486 39.7044 185.054 36.6703C186.623 33.6192 188.847 31.2499 191.728 29.5624C194.625 27.8578 198.06 27.0055 202.032 27.0055C206.003 27.0055 209.429 27.8578 212.31 29.5624C215.208 31.2499 217.441 33.6192 219.009 36.6703C220.577 39.7044 221.361 43.2499 221.361 47.3067C221.361 51.3294 220.577 54.8663 219.009 57.9175C217.441 60.9516 215.208 63.3209 212.31 65.0254C209.429 66.7129 206.003 67.5567 202.032 67.5567ZM202.083 59.1192C203.89 59.1192 205.398 58.6078 206.608 57.5851C207.819 56.5453 208.731 55.1305 209.344 53.3408C209.975 51.551 210.29 49.5141 210.29 47.23C210.29 44.9459 209.975 42.9089 209.344 41.1192C208.731 39.3294 207.819 37.9146 206.608 36.8749C205.398 35.8351 203.89 35.3152 202.083 35.3152C200.259 35.3152 198.725 35.8351 197.481 36.8749C196.253 37.9146 195.324 39.3294 194.694 41.1192C194.08 42.9089 193.773 44.9459 193.773 47.23C193.773 49.5141 194.08 51.551 194.694 53.3408C195.324 55.1305 196.253 56.5453 197.481 57.5851C198.725 58.6078 200.259 59.1192 202.083 59.1192Z"></path><path d="M242.715 67.4288C239.732 67.4288 237.031 66.6618 234.61 65.1277C232.207 63.5766 230.298 61.301 228.883 58.301C227.485 55.284 226.786 51.5851 226.786 47.2044C226.786 42.7044 227.511 38.9629 228.96 35.98C230.408 32.98 232.335 30.7385 234.738 29.2555C237.158 27.7555 239.809 27.0055 242.69 27.0055C244.889 27.0055 246.721 27.3805 248.187 28.1305C249.67 28.8635 250.863 29.7839 251.766 30.8919C252.687 31.9828 253.386 33.0567 253.863 34.1135H254.195V14.426H265.062V66.7896H254.323V60.4999H253.863C253.352 61.5908 252.627 62.6732 251.69 63.747C250.769 64.8038 249.568 65.6817 248.085 66.3805C246.619 67.0794 244.829 67.4288 242.715 67.4288ZM246.167 58.7612C247.923 58.7612 249.406 58.2839 250.616 57.3294C251.843 56.3578 252.781 55.0027 253.428 53.2641C254.093 51.5254 254.425 49.4885 254.425 47.1533C254.425 44.818 254.102 42.7896 253.454 41.068C252.806 39.3464 251.869 38.0169 250.641 37.0794C249.414 36.1419 247.923 35.6732 246.167 35.6732C244.377 35.6732 242.869 36.1589 241.641 37.1305C240.414 38.1021 239.485 39.4487 238.854 41.1703C238.224 42.8919 237.908 44.8862 237.908 47.1533C237.908 49.4374 238.224 51.4572 238.854 53.2129C239.502 54.9516 240.431 56.3152 241.641 57.3038C242.869 58.2754 244.377 58.7612 246.167 58.7612Z"></path><path d="M291.715 67.5567C287.675 67.5567 284.198 66.7385 281.283 65.1021C278.385 63.4487 276.152 61.1135 274.584 58.0964C273.016 55.0624 272.232 51.4743 272.232 47.3322C272.232 43.2925 273.016 39.747 274.584 36.6959C276.152 33.6447 278.36 31.2669 281.206 29.5624C284.07 27.8578 287.428 27.0055 291.28 27.0055C293.871 27.0055 296.283 27.4232 298.516 28.2584C300.766 29.0766 302.726 30.3124 304.397 31.9658C306.084 33.6192 307.397 35.6987 308.334 38.2044C309.272 40.693 309.74 43.6078 309.74 46.9487V49.9402H276.578V43.1902H299.488C299.488 41.622 299.147 40.2328 298.465 39.0226C297.783 37.8124 296.837 36.8663 295.627 36.1845C294.434 35.4857 293.044 35.1362 291.459 35.1362C289.806 35.1362 288.34 35.5197 287.061 36.2868C285.8 37.0368 284.811 38.051 284.095 39.3294C283.38 40.5908 283.013 41.997 282.996 43.5482V49.9658C282.996 51.9089 283.354 53.5879 284.07 55.0027C284.803 56.4175 285.834 57.5084 287.164 58.2754C288.493 59.0425 290.07 59.426 291.894 59.426C293.104 59.426 294.212 59.2555 295.218 58.9146C296.223 58.5737 297.084 58.0624 297.8 57.3805C298.516 56.6987 299.061 55.8635 299.436 54.8749L309.51 55.5396C308.999 57.9601 307.951 60.0737 306.365 61.8805C304.797 63.6703 302.769 65.068 300.28 66.0737C297.809 67.0624 294.953 67.5567 291.715 67.5567Z"></path><path d="M316.648 66.7896V27.5169H327.208V34.3692H327.617C328.333 31.9317 329.535 30.0908 331.222 28.8464C332.91 27.5851 334.853 26.9544 337.052 26.9544C337.597 26.9544 338.185 26.9885 338.816 27.0567C339.447 27.1249 340.001 27.2186 340.478 27.3379V37.0027C339.967 36.8493 339.259 36.7129 338.356 36.5936C337.452 36.4743 336.626 36.4146 335.876 36.4146C334.273 36.4146 332.842 36.7641 331.58 37.4629C330.336 38.1447 329.347 39.0993 328.614 40.3266C327.898 41.5538 327.54 42.9686 327.54 44.5709V66.7896H316.648Z"></path><path d="M102.464 32.5472C100.371 32.5472 98.9767 31.3202 98.9767 28.8017V14.3362C98.9767 5.10163 95.1722 0 85.3443 0H80.779V9.75122H82.1741C86.0417 9.75122 87.8805 11.8823 87.8805 15.6924V28.4788C87.8805 34.0324 89.529 36.2927 93.1432 37.4551C89.529 38.553 87.8805 40.8777 87.8805 46.4313C87.8805 49.5957 87.8805 52.7599 87.8805 55.9244C87.8805 58.572 87.8805 61.1551 87.1831 63.8027C86.4856 66.2568 85.3443 68.5815 83.7592 70.5833C82.8715 71.7459 81.857 72.7145 80.7158 73.6187V74.9101H85.2808C95.1088 74.9101 98.9132 69.8085 98.9132 60.5738V46.1084C98.9132 43.5253 100.245 42.3629 102.401 42.3629H105V32.6116H102.464V32.5472Z"></path><path d="M71.3947 14.7257H57.3186C57.0015 14.7257 56.748 14.4674 56.748 14.1445V13.0467C56.748 12.7238 57.0015 12.4655 57.3186 12.4655H71.4581C71.775 12.4655 72.0287 12.7238 72.0287 13.0467V14.1445C72.0287 14.4674 71.7116 14.7257 71.3947 14.7257Z"></path><path d="M73.8044 28.6738H63.5327C63.2156 28.6738 62.9619 28.4154 62.9619 28.0925V26.9948C62.9619 26.672 63.2156 26.4135 63.5327 26.4135H73.8044C74.1215 26.4135 74.375 26.672 74.375 26.9948V28.0925C74.375 28.3509 74.1215 28.6738 73.8044 28.6738Z"></path><path d="M77.862 21.6998H57.3186C57.0015 21.6998 56.748 21.4415 56.748 21.1186V20.0208C56.748 19.6979 57.0015 19.4396 57.3186 19.4396H77.7985C78.1157 19.4396 78.3694 19.6979 78.3694 20.0208V21.1186C78.3694 21.3769 78.1791 21.6998 77.862 21.6998Z"></path><path d="M41.0235 17.888C42.4183 17.888 43.8134 18.0172 45.1448 18.3401V15.6924C45.1448 11.9469 47.047 9.75122 50.8514 9.75122H52.2462V0H47.681C37.853 0 34.0488 5.10163 34.0488 14.3362V19.115C36.2679 18.3401 38.6141 17.888 41.0235 17.888Z"></path><path d="M82.1739 53.0168C81.1594 44.8154 74.9456 37.9701 66.9564 36.4202C64.7373 35.9683 62.518 35.9036 60.3623 36.2911C60.2989 36.2911 60.2989 36.2264 60.2355 36.2264C56.7482 28.8001 49.2664 23.8922 41.1504 23.8922C33.0344 23.8922 25.616 28.671 22.0652 36.0974C22.0018 36.0974 22.0018 36.162 21.9384 36.162C19.6558 35.9036 17.3732 36.0327 15.0906 36.614C7.22825 38.5512 1.26813 45.2674 0.190222 53.4041C0.0633989 54.2436 0 55.0831 0 55.8581C0 58.3119 1.64855 60.5722 4.05796 60.8951C7.03803 61.3473 9.63766 59.0223 9.57426 56.0519C9.57426 55.5997 9.57426 55.0831 9.63766 54.6311C10.1449 50.4981 13.2518 47.011 17.3098 46.0422C18.5779 45.7193 19.846 45.6549 21.0507 45.8487C24.9185 46.3653 28.7228 44.3632 30.3713 40.8761C31.5761 38.293 33.4783 36.0327 36.0145 34.8057C38.8042 33.4495 41.9746 33.256 44.8914 34.2893C47.9347 35.387 50.2172 37.7117 51.6123 40.6177C53.0706 43.4593 53.768 45.4611 56.875 45.8487C58.143 46.0422 61.6937 45.9777 63.0254 45.9131C65.625 45.9131 68.2246 46.8172 70.0634 48.69C71.268 49.9814 72.1557 51.596 72.5362 53.4041C73.1068 56.3101 72.4094 59.2161 70.6974 61.4117C69.4926 62.9616 67.8441 64.124 66.0053 64.6406C65.1176 64.899 64.2299 64.9635 63.3422 64.9635C62.8351 64.9635 62.1377 64.9635 61.3134 64.9635C58.7772 64.9635 53.3877 64.9635 49.3296 64.9635C46.5399 64.9635 44.3206 62.7034 44.3206 59.8618V50.3043V40.9405C44.3206 40.1657 43.6866 39.52 42.9257 39.52H40.9601C37.0922 39.5844 33.9855 43.9759 33.9855 48.6253C33.9855 53.275 33.9855 65.6094 33.9855 65.6094C33.9855 70.6464 37.9799 74.7148 42.9257 74.7148C42.9257 74.7148 64.9276 74.6501 65.2445 74.6501C70.3169 74.1335 75.009 71.4859 78.1792 67.4175C81.3496 63.4782 82.8079 58.3119 82.1739 53.0168Z"></path></svg><div class="jss57"><a href="/">Go to coder.com</a><a href="/cdn-cgi/l/email-protection#afccc0c1dbceccdbefccc0cbcadd81ccc0c2"><span class="__cf_email__" data-cfemail="dfbcb0b1abbebcab9fbcb0bbbaadf1bcb0b2">[email&#160;protected]</span></a><a class="hide-mobile" target="_blank" rel="noreferrer" href="https://github.com/cdr">GitHub</a></div></div></div></div></section><div class="jss59"><div class="jss60"><div class="jss61">Table of contents</div><nav><ul class="jss62"><li class="jss63 "><a title="install.sh" href="#installsh">install.sh</a></li><li class="jss63 "><a title="npm" href="#npm">npm</a></li><li class="jss63 "><a title="Standalone releases" href="#standalone-releases">Standalone releases</a></li><li class="jss63 "><a title="Debian, Ubuntu" href="#debian-ubuntu">Debian, Ubuntu</a></li><li class="jss63 "><a title="Fedora, CentOS, RHEL, SUSE" href="#fedora-centos-rhel-suse">Fedora, CentOS, RHEL, SUSE</a></li><li class="jss63 "><a title="Arch Linux" href="#arch-linux">Arch Linux</a></li><li class="jss63 "><a title="macOS" href="#macos">macOS</a></li><li class="jss63 "><a title="Docker" href="#docker">Docker</a></li><li class="jss63 "><a title="Helm" href="#helm">Helm</a></li><li class="jss63 "><a title="Windows" href="#windows">Windows</a></li><li class="jss63 "><a title="Raspberry Pi" href="#raspberry-pi">Raspberry Pi</a></li><li class="jss63 "><a title="Termux" href="#termux">Termux</a></li><li class="jss63 "><a title="Cloud providers" href="#cloud-providers">Cloud providers</a></li><li class="jss63 "><a title="Uninstall" href="#uninstall">Uninstall</a></li></ul></nav></div></div></div></div></div><div class="jss65" style="opacity:0;visibility:hidden"><div class="body"><div class="text"><p>We use <strong>cookies</strong> to make your experience better.</p></div></div><div class="footer"><div role="group" class="MuiButtonGroup-root actions"><a href="/legal/privacy-policy"><button class="MuiButtonBase-root MuiButton-root MuiButton-text jss22 MuiButton-textSizeLarge MuiButton-sizeLarge" tabindex="0" type="button"><span class="MuiButton-label"><span>Privacy Policy</span></span></button></a><button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlined jss22 MuiButton-containedSizeLarge MuiButton-sizeLarge" tabindex="0" type="button"><span class="MuiButton-label"><span>Ok</span></span></button></div></div></div><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NLLNT3K" title="google tag manager" style="display:none"></iframe></div><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"versions":["v4.2.0"],"currentVersionNumber":"v4.2.0","currentVersion":"latest","content":{"html":"\u003c!-- START doctoc generated TOC please keep comment here to allow auto update --\u003e\n\u003c!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE --\u003e\n\u003ch1 id=\"install\"\u003e\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#install\"\u003e\u003cspan class=\"icon icon-link\"\u003e\u003c/span\u003e\u003c/a\u003eInstall\u003c/h1\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"#installsh\"\u003einstall.sh\u003c/a\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"#detection-reference\"\u003eDetection reference\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"#npm\"\u003enpm\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"#standalone-releases\"\u003eStandalone releases\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"#debian-ubuntu\"\u003eDebian, Ubuntu\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"#fedora-centos-rhel-suse\"\u003eFedora, CentOS, RHEL, SUSE\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"#arch-linux\"\u003eArch Linux\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"#macos\"\u003emacOS\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"#docker\"\u003eDocker\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"#helm\"\u003eHelm\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"#windows\"\u003eWindows\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"#raspberry-pi\"\u003eRaspberry Pi\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"#termux\"\u003eTermux\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"#cloud-providers\"\u003eCloud providers\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"#uninstall\"\u003eUninstall\u003c/a\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"#installsh-1\"\u003einstall.sh\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"#homebrew\"\u003eHomebrew\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"#npm-1\"\u003enpm\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"#debian-ubuntu-1\"\u003eDebian, Ubuntu\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003c!-- END doctoc generated TOC please keep comment here to allow auto update --\u003e\n\u003cp\u003eThis document demonstrates how to install \u003ccode\u003ecode-server\u003c/code\u003e on various distros and\noperating systems.\u003c/p\u003e\n\u003ch2 id=\"installsh\"\u003e\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#installsh\"\u003e\u003cspan class=\"icon icon-link\"\u003e\u003c/span\u003e\u003c/a\u003einstall.sh\u003c/h2\u003e\n\u003cp\u003eThe easiest way to install code-server is to use our \u003ca href=\"https://github.com/coder/code-server/blob/main/install.sh\"\u003einstall\nscript\u003c/a\u003e for Linux, macOS and FreeBSD. The install script\n\u003ca href=\"#detection-reference\"\u003eattempts to use the system package manager\u003c/a\u003e if possible.\u003c/p\u003e\n\u003cp\u003eYou can preview what occurs during the install process:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-bash\"\u003ecurl -fsSL https://code-server.dev/install.sh | sh -s -- --dry-run\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eTo install, run:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-bash\"\u003ecurl -fsSL https://code-server.dev/install.sh | sh\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eYou can modify the installation process by including one or more of the\nfollowing flags:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003e--dry-run\u003c/code\u003e: echo the commands for the install process without running them.\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003e--method\u003c/code\u003e: choose the installation method.\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003e--method=detect\u003c/code\u003e: detect the package manager but fallback to\n\u003ccode\u003e--method=standalone\u003c/code\u003e.\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003e--method=standalone\u003c/code\u003e: install a standalone release archive into \u003ccode\u003e~/.local\u003c/code\u003e.\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003e--prefix=/usr/local\u003c/code\u003e: install a standalone release archive system-wide.\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003e--version=X.X.X\u003c/code\u003e: install version \u003ccode\u003eX.X.X\u003c/code\u003e instead of latest version.\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003e--help\u003c/code\u003e: see usage docs.\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eWhen done, the install script prints out instructions for running and starting\ncode-server.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003eIf you're concerned about the install script's use of \u003ccode\u003ecurl | sh\u003c/code\u003e and the\nsecurity implications, please see \u003ca href=\"https://sandstorm.io/news/2015-09-24-is-curl-bash-insecure-pgp-verified-install\"\u003ethis blog\npost\u003c/a\u003e\nby \u003ca href=\"https://sandstorm.io\"\u003esandstorm.io\u003c/a\u003e.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003eIf you prefer to install code-server manually, despite the \u003ca href=\"#detection-reference\"\u003edetection\nreferences\u003c/a\u003e and \u003ccode\u003e--dry-run\u003c/code\u003e feature, then continue on for\ninformation on how to do this. The \u003ca href=\"https://github.com/coder/code-server/blob/main/install.sh\"\u003e\u003ccode\u003einstall.sh\u003c/code\u003e\u003c/a\u003e script runs the\n\u003cem\u003eexact\u003c/em\u003e same commands presented in the rest of this document.\u003c/p\u003e\n\u003ch3 id=\"detection-reference\"\u003e\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#detection-reference\"\u003e\u003cspan class=\"icon icon-link\"\u003e\u003c/span\u003e\u003c/a\u003eDetection reference\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eFor Debian and Ubuntu, code-server will install the latest deb package.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eFor Fedora, CentOS, RHEL and openSUSE, code-server will install the latest RPM\npackage.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eFor Arch Linux, code-server will install the AUR package.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eFor any unrecognized Linux operating system, code-server will install the\nlatest standalone release into \u003ccode\u003e~/.local\u003c/code\u003e.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eEnsure that you add \u003ccode\u003e~/.local/bin\u003c/code\u003e to your \u003ccode\u003e$PATH\u003c/code\u003e to run code-server.\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eFor macOS, code-server will install the Homebrew package (if you don't have\nHomebrew installed, code-server will install the latest standalone release\ninto \u003ccode\u003e~/.local\u003c/code\u003e).\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eEnsure that you add \u003ccode\u003e~/.local/bin\u003c/code\u003e to your \u003ccode\u003e$PATH\u003c/code\u003e to run code-server.\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eFor FreeBSD, code-server will install the \u003ca href=\"#npm\"\u003enpm package\u003c/a\u003e with \u003ccode\u003enpm\u003c/code\u003e.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eIf you're installing code-server onto architecture with no releases,\ncode-server will install the \u003ca href=\"#npm\"\u003enpm package\u003c/a\u003e with \u003ccode\u003enpm\u003c/code\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eWe currently offer releases for amd64 and arm64.\u003c/li\u003e\n\u003cli\u003eThe \u003ca href=\"#npm\"\u003enpm package\u003c/a\u003e builds the native modules on post-install.\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2 id=\"npm\"\u003e\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#npm\"\u003e\u003cspan class=\"icon icon-link\"\u003e\u003c/span\u003e\u003c/a\u003enpm\u003c/h2\u003e\n\u003cp\u003eWe recommend installing with \u003ccode\u003enpm\u003c/code\u003e when:\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003eYou aren't using a machine with \u003ccode\u003eamd64\u003c/code\u003e or \u003ccode\u003earm64\u003c/code\u003e.\u003c/li\u003e\n\u003cli\u003eYou are installing code-server on Windows\u003c/li\u003e\n\u003cli\u003eYou're on Linux with \u003ccode\u003eglibc\u003c/code\u003e \u0026#x3C; v2.17, \u003ccode\u003eglibcxx\u003c/code\u003e \u0026#x3C; v3.4.18 on \u003ccode\u003eamd64\u003c/code\u003e, \u003ccode\u003eglibc\u003c/code\u003e\n\u0026#x3C; v2.23, or \u003ccode\u003eglibcxx\u003c/code\u003e \u0026#x3C; v3.4.21 on \u003ccode\u003earm64\u003c/code\u003e.\u003c/li\u003e\n\u003cli\u003eYou're running Alpine Linux or are using a non-glibc libc. See\n\u003ca href=\"https://github.com/coder/code-server/issues/1430#issuecomment-629883198\"\u003e#1430\u003c/a\u003e\nfor more information.\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003eInstalling code-server with \u003ccode\u003enpm\u003c/code\u003e builds native modules on install.\u003c/p\u003e\n\u003cp\u003eThis process requires C dependencies; see our guide on [installing with \u003ccode\u003enpm\u003c/code\u003e]\u003ca href=\"npm\"\u003e./npm.md\u003c/a\u003e for more information.\u003c/p\u003e\n\u003ch2 id=\"standalone-releases\"\u003e\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#standalone-releases\"\u003e\u003cspan class=\"icon icon-link\"\u003e\u003c/span\u003e\u003c/a\u003eStandalone releases\u003c/h2\u003e\n\u003cp\u003eWe publish self-contained \u003ccode\u003e.tar.gz\u003c/code\u003e archives for every release on\n\u003ca href=\"https://github.com/coder/code-server/releases\"\u003eGitHub\u003c/a\u003e. The archives bundle the\nnode binary and node modules.\u003c/p\u003e\n\u003cp\u003eWe create the standalone releases using the \u003ca href=\"#npm\"\u003enpm package\u003c/a\u003e, and we\nthen create the remaining releases using the standalone version.\u003c/p\u003e\n\u003cp\u003eThe only requirement to use the standalone release is \u003ccode\u003eglibc\u003c/code\u003e \u003e= 2.17 and\n\u003ccode\u003eglibcxx\u003c/code\u003e \u003e= v3.4.18 on Linux (for macOS, there is no minimum system\nrequirement).\u003c/p\u003e\n\u003cp\u003eTo use a standalone release:\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003eDownload the latest release archive for your system from\n\u003ca href=\"https://github.com/coder/code-server/releases\"\u003eGitHub\u003c/a\u003e.\u003c/li\u003e\n\u003cli\u003eUnpack the release.\u003c/li\u003e\n\u003cli\u003eRun code-server by executing \u003ccode\u003e./bin/code-server\u003c/code\u003e.\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003eYou can add \u003ccode\u003e./bin/code-server\u003c/code\u003e to your \u003ccode\u003e$PATH\u003c/code\u003e so that you can execute\n\u003ccode\u003ecode-server\u003c/code\u003e without providing full path each time.\u003c/p\u003e\n\u003cp\u003eHere is a sample script for installing and using a standalone code-server\nrelease on Linux:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-bash\"\u003emkdir -p ~/.\u003cspan class=\"hljs-built_in\"\u003elocal\u003c/span\u003e/lib ~/.\u003cspan class=\"hljs-built_in\"\u003elocal\u003c/span\u003e/bin\ncurl -fL https://github.com/coder/code-server/releases/download/v\u003cspan class=\"hljs-variable\"\u003e$VERSION\u003c/span\u003e/code-server-\u003cspan class=\"hljs-variable\"\u003e$VERSION\u003c/span\u003e-linux-amd64.tar.gz \\\n  | tar -C ~/.\u003cspan class=\"hljs-built_in\"\u003elocal\u003c/span\u003e/lib -xz\nmv ~/.\u003cspan class=\"hljs-built_in\"\u003elocal\u003c/span\u003e/lib/code-server-\u003cspan class=\"hljs-variable\"\u003e$VERSION\u003c/span\u003e-linux-amd64 ~/.\u003cspan class=\"hljs-built_in\"\u003elocal\u003c/span\u003e/lib/code-server-\u003cspan class=\"hljs-variable\"\u003e$VERSION\u003c/span\u003e\nln -s ~/.\u003cspan class=\"hljs-built_in\"\u003elocal\u003c/span\u003e/lib/code-server-\u003cspan class=\"hljs-variable\"\u003e$VERSION\u003c/span\u003e/bin/code-server ~/.\u003cspan class=\"hljs-built_in\"\u003elocal\u003c/span\u003e/bin/code-server\nPATH=\u003cspan class=\"hljs-string\"\u003e\"~/.local/bin:\u003cspan class=\"hljs-variable\"\u003e$PATH\u003c/span\u003e\"\u003c/span\u003e\ncode-server\n\u003cspan class=\"hljs-comment\"\u003e# Now visit http://127.0.0.1:8080. Your password is in ~/.config/code-server/config.yaml\u003c/span\u003e\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2 id=\"debian-ubuntu\"\u003e\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#debian-ubuntu\"\u003e\u003cspan class=\"icon icon-link\"\u003e\u003c/span\u003e\u003c/a\u003eDebian, Ubuntu\u003c/h2\u003e\n\u003cblockquote\u003e\n\u003cp\u003eThe standalone arm64 .deb does not support Ubuntu 16.04 or earlier. Please\nupgrade or \u003ca href=\"#npm\"\u003ebuild with \u003ccode\u003enpm\u003c/code\u003e\u003c/a\u003e.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-bash\"\u003ecurl -fOL https://github.com/coder/code-server/releases/download/v\u003cspan class=\"hljs-variable\"\u003e$VERSION\u003c/span\u003e/code-server_\u003cspan class=\"hljs-variable\"\u003e$VERSION_amd64\u003c/span\u003e.deb\nsudo dpkg -i code-server_\u003cspan class=\"hljs-variable\"\u003e$VERSION_amd64\u003c/span\u003e.deb\nsudo systemctl \u003cspan class=\"hljs-built_in\"\u003eenable\u003c/span\u003e --now code-server@\u003cspan class=\"hljs-variable\"\u003e$USER\u003c/span\u003e\n\u003cspan class=\"hljs-comment\"\u003e# Now visit http://127.0.0.1:8080. Your password is in ~/.config/code-server/config.yaml\u003c/span\u003e\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2 id=\"fedora-centos-rhel-suse\"\u003e\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#fedora-centos-rhel-suse\"\u003e\u003cspan class=\"icon icon-link\"\u003e\u003c/span\u003e\u003c/a\u003eFedora, CentOS, RHEL, SUSE\u003c/h2\u003e\n\u003cblockquote\u003e\n\u003cp\u003eThe standalone arm64 .rpm does not support CentOS 7. Please upgrade or \u003ca href=\"#npm\"\u003ebuild\nwith \u003ccode\u003enpm\u003c/code\u003e\u003c/a\u003e.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-bash\"\u003ecurl -fOL https://github.com/coder/code-server/releases/download/v\u003cspan class=\"hljs-variable\"\u003e$VERSION\u003c/span\u003e/code-server-\u003cspan class=\"hljs-variable\"\u003e$VERSION\u003c/span\u003e-amd64.rpm\nsudo rpm -i code-server-\u003cspan class=\"hljs-variable\"\u003e$VERSION\u003c/span\u003e-amd64.rpm\nsudo systemctl \u003cspan class=\"hljs-built_in\"\u003eenable\u003c/span\u003e --now code-server@\u003cspan class=\"hljs-variable\"\u003e$USER\u003c/span\u003e\n\u003cspan class=\"hljs-comment\"\u003e# Now visit http://127.0.0.1:8080. Your password is in ~/.config/code-server/config.yaml\u003c/span\u003e\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2 id=\"arch-linux\"\u003e\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#arch-linux\"\u003e\u003cspan class=\"icon icon-link\"\u003e\u003c/span\u003e\u003c/a\u003eArch Linux\u003c/h2\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-bash\"\u003e\u003cspan class=\"hljs-comment\"\u003e# Install code-server from the AUR using yay.\u003c/span\u003e\nyay -S code-server\nsudo systemctl \u003cspan class=\"hljs-built_in\"\u003eenable\u003c/span\u003e --now code-server@\u003cspan class=\"hljs-variable\"\u003e$USER\u003c/span\u003e\n\u003cspan class=\"hljs-comment\"\u003e# Now visit http://127.0.0.1:8080. Your password is in ~/.config/code-server/config.yaml\u003c/span\u003e\n\u003c/code\u003e\u003c/pre\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-bash\"\u003e\u003cspan class=\"hljs-comment\"\u003e# Install code-server from the AUR with plain makepkg.\u003c/span\u003e\ngit \u003cspan class=\"hljs-built_in\"\u003eclone\u003c/span\u003e https://aur.archlinux.org/code-server.git\n\u003cspan class=\"hljs-built_in\"\u003ecd\u003c/span\u003e code-server\nmakepkg -si\nsudo systemctl \u003cspan class=\"hljs-built_in\"\u003eenable\u003c/span\u003e --now code-server@\u003cspan class=\"hljs-variable\"\u003e$USER\u003c/span\u003e\n\u003cspan class=\"hljs-comment\"\u003e# Now visit http://127.0.0.1:8080. Your password is in ~/.config/code-server/config.yaml\u003c/span\u003e\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2 id=\"macos\"\u003e\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#macos\"\u003e\u003cspan class=\"icon icon-link\"\u003e\u003c/span\u003e\u003c/a\u003emacOS\u003c/h2\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-bash\"\u003ebrew install code-server\nbrew services start code-server\n\u003cspan class=\"hljs-comment\"\u003e# Now visit http://127.0.0.1:8080. Your password is in ~/.config/code-server/config.yaml\u003c/span\u003e\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2 id=\"docker\"\u003e\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#docker\"\u003e\u003cspan class=\"icon icon-link\"\u003e\u003c/span\u003e\u003c/a\u003eDocker\u003c/h2\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-bash\"\u003e\u003cspan class=\"hljs-comment\"\u003e# This will start a code-server container and expose it at http://127.0.0.1:8080.\u003c/span\u003e\n\u003cspan class=\"hljs-comment\"\u003e# It will also mount your current directory into the container as `/home/coder/project`\u003c/span\u003e\n\u003cspan class=\"hljs-comment\"\u003e# and forward your UID/GID so that all file system operations occur as your user outside\u003c/span\u003e\n\u003cspan class=\"hljs-comment\"\u003e# the container.\u003c/span\u003e\n\u003cspan class=\"hljs-comment\"\u003e#\u003c/span\u003e\n\u003cspan class=\"hljs-comment\"\u003e# Your $HOME/.config is mounted at $HOME/.config within the container to ensure you can\u003c/span\u003e\n\u003cspan class=\"hljs-comment\"\u003e# easily access/modify your code-server config in $HOME/.config/code-server/config.json\u003c/span\u003e\n\u003cspan class=\"hljs-comment\"\u003e# outside the container.\u003c/span\u003e\nmkdir -p ~/.config\ndocker run -it --name code-server -p 127.0.0.1:8080:8080 \\\n  -v \u003cspan class=\"hljs-string\"\u003e\"\u003cspan class=\"hljs-variable\"\u003e$HOME\u003c/span\u003e/.config:/home/coder/.config\"\u003c/span\u003e \\\n  -v \u003cspan class=\"hljs-string\"\u003e\"\u003cspan class=\"hljs-variable\"\u003e$PWD\u003c/span\u003e:/home/coder/project\"\u003c/span\u003e \\\n  -u \u003cspan class=\"hljs-string\"\u003e\"\u003cspan class=\"hljs-subst\"\u003e$(id -u)\u003c/span\u003e:\u003cspan class=\"hljs-subst\"\u003e$(id -g)\u003c/span\u003e\"\u003c/span\u003e \\\n  -e \u003cspan class=\"hljs-string\"\u003e\"DOCKER_USER=\u003cspan class=\"hljs-variable\"\u003e$USER\u003c/span\u003e\"\u003c/span\u003e \\\n  codercom/code-server:latest\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eOur official image supports \u003ccode\u003eamd64\u003c/code\u003e and \u003ccode\u003earm64\u003c/code\u003e. For \u003ccode\u003earm32\u003c/code\u003e support, you can\nuse a \u003ca href=\"https://hub.docker.com/r/linuxserver/code-server\"\u003ecommunity-maintained code-server\nalternative\u003c/a\u003e.\u003c/p\u003e\n\u003ch2 id=\"helm\"\u003e\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#helm\"\u003e\u003cspan class=\"icon icon-link\"\u003e\u003c/span\u003e\u003c/a\u003eHelm\u003c/h2\u003e\n\u003cp\u003eYou can install code-server using the \u003ca href=\"https://coder.com/docs/code-server/latest/helm\"\u003eHelm package manager\u003c/a\u003e.\u003c/p\u003e\n\u003ch2 id=\"windows\"\u003e\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#windows\"\u003e\u003cspan class=\"icon icon-link\"\u003e\u003c/span\u003e\u003c/a\u003eWindows\u003c/h2\u003e\n\u003cp\u003eWe currently \u003ca href=\"https://github.com/coder/code-server/issues/1397\"\u003edo not publish Windows releases\u003c/a\u003e. We recommend installing code-server onto Windows with \u003ca href=\"#npm\"\u003e\u003ccode\u003enpm\u003c/code\u003e\u003c/a\u003e.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003eNote: You will also need to \u003ca href=\"https://github.com/coder/cloud-agent/issues/17\"\u003ebuild coder/cloud-agent manually\u003c/a\u003e if you would like to use \u003ccode\u003ecode-server --link\u003c/code\u003e on Windows.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch2 id=\"raspberry-pi\"\u003e\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#raspberry-pi\"\u003e\u003cspan class=\"icon icon-link\"\u003e\u003c/span\u003e\u003c/a\u003eRaspberry Pi\u003c/h2\u003e\n\u003cp\u003eWe recommend installing code-server onto Raspberry Pi with \u003ca href=\"#npm\"\u003e\u003ccode\u003enpm\u003c/code\u003e\u003c/a\u003e.\u003c/p\u003e\n\u003ch2 id=\"termux\"\u003e\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#termux\"\u003e\u003cspan class=\"icon icon-link\"\u003e\u003c/span\u003e\u003c/a\u003eTermux\u003c/h2\u003e\n\u003cp\u003ePlease see code-server's \u003ca href=\"termux#installation\"\u003eTermux docs\u003c/a\u003e for more\ninformation.\u003c/p\u003e\n\u003ch2 id=\"cloud-providers\"\u003e\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#cloud-providers\"\u003e\u003cspan class=\"icon icon-link\"\u003e\u003c/span\u003e\u003c/a\u003eCloud providers\u003c/h2\u003e\n\u003cp\u003eWe maintain \u003ca href=\"https://github.com/coder/deploy-code-server\"\u003eone-click apps and install scripts for cloud\nproviders\u003c/a\u003e such as DigitalOcean,\nRailway, Heroku, and Azure.\u003c/p\u003e\n\u003ch2 id=\"uninstall\"\u003e\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#uninstall\"\u003e\u003cspan class=\"icon icon-link\"\u003e\u003c/span\u003e\u003c/a\u003eUninstall\u003c/h2\u003e\n\u003cp\u003ecode-server can be completely uninstalled by removing the application directory, and your user configuration directory.\u003c/p\u003e\n\u003cp\u003eTo delete settings and data:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-shell\"\u003erm -rf ~/.local/share/code-server ~/.config/code-server\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"installsh-1\"\u003e\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#installsh-1\"\u003e\u003cspan class=\"icon icon-link\"\u003e\u003c/span\u003e\u003c/a\u003einstall.sh\u003c/h3\u003e\n\u003cp\u003eIf you installed with the install script, by default code-server will be in \u003ccode\u003e~/.local/lib/code-server-\u0026#x3C;version\u003e\u003c/code\u003e and you can remove it with \u003ccode\u003erm -rf\u003c/code\u003e. e.g.\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-shell\"\u003erm -rf ~/.local/lib/code-server-*\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"homebrew\"\u003e\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#homebrew\"\u003e\u003cspan class=\"icon icon-link\"\u003e\u003c/span\u003e\u003c/a\u003eHomebrew\u003c/h3\u003e\n\u003cp\u003eTo remove the code-server homebrew package, run:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-shell\"\u003ebrew remove code-server\n\u003cspan class=\"hljs-meta\"\u003e\n#\u003c/span\u003e\u003cspan class=\"bash\"\u003e Alternatively\u003c/span\u003e\nbrew uninstall code-server\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"npm-1\"\u003e\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#npm-1\"\u003e\u003cspan class=\"icon icon-link\"\u003e\u003c/span\u003e\u003c/a\u003enpm\u003c/h3\u003e\n\u003cp\u003eTo remove the code-server global module, run:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-shell\"\u003enpm uninstall -g code-server\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"debian-ubuntu-1\"\u003e\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#debian-ubuntu-1\"\u003e\u003cspan class=\"icon icon-link\"\u003e\u003c/span\u003e\u003c/a\u003eDebian, Ubuntu\u003c/h3\u003e\n\u003cp\u003eTo uninstall, run:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-shell\"\u003esudo apt remove code-server\n\u003c/code\u003e\u003c/pre\u003e","attributes":{"description":"How to install code-server.","title":"Install"},"tableOfContents":[{"title":"install.sh","id":"installsh"},{"title":"npm","id":"npm"},{"title":"Standalone releases","id":"standalone-releases"},{"title":"Debian, Ubuntu","id":"debian-ubuntu"},{"title":"Fedora, CentOS, RHEL, SUSE","id":"fedora-centos-rhel-suse"},{"title":"Arch Linux","id":"arch-linux"},{"title":"macOS","id":"macos"},{"title":"Docker","id":"docker"},{"title":"Helm","id":"helm"},{"title":"Windows","id":"windows"},{"title":"Raspberry Pi","id":"raspberry-pi"},{"title":"Termux","id":"termux"},{"title":"Cloud providers","id":"cloud-providers"},{"title":"Uninstall","id":"uninstall"}],"readingTime":{"text":"8 min read","minutes":7.035,"time":422100,"words":1407},"crumbs":[],"filePath":"install.md","slug":["install"],"children":[{"html":"\u003c!-- START doctoc generated TOC please keep comment here to allow auto update --\u003e\n\u003c!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE --\u003e\n\u003ch1 id=\"npm-install-requirements\"\u003e\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#npm-install-requirements\"\u003e\u003cspan class=\"icon icon-link\"\u003e\u003c/span\u003e\u003c/a\u003enpm Install Requirements\u003c/h1\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"#nodejs-version\"\u003eNode.js version\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"#ubuntu-debian\"\u003eUbuntu, Debian\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"#fedora-centos-rhel\"\u003eFedora, CentOS, RHEL\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"#alpine\"\u003eAlpine\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"#macos\"\u003emacOS\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"#freebsd\"\u003eFreeBSD\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"#windows\"\u003eWindows\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"#installing\"\u003eInstalling\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"#troubleshooting\"\u003eTroubleshooting\u003c/a\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"#issues-with-nodejs-after-version-upgrades\"\u003eIssues with Node.js after version upgrades\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"#debugging-install-issues-with-npm\"\u003eDebugging install issues with npm\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003c!-- END doctoc generated TOC please keep comment here to allow auto update --\u003e\n\u003cp\u003eIf you're installing code-server via \u003ccode\u003enpm\u003c/code\u003e, you'll need to install additional\ndependencies required to build the native modules used by VS Code. This article\nincludes installing instructions based on your operating system.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eWARNING\u003c/strong\u003e: Do not use \u003ccode\u003eyarn\u003c/code\u003e to install code-server. Unlike \u003ccode\u003enpm\u003c/code\u003e, it does not respect\nlockfiles for distributed applications. It will instead use the latest version\navailable at installation time - which might not be the one used for a given\ncode-server release, and \u003ca href=\"https://github.com/coder/code-server/issues/4927\"\u003emight lead to unexpected behavior\u003c/a\u003e.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch2 id=\"nodejs-version\"\u003e\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#nodejs-version\"\u003e\u003cspan class=\"icon icon-link\"\u003e\u003c/span\u003e\u003c/a\u003eNode.js version\u003c/h2\u003e\n\u003cp\u003eWe use the same major version of Node.js shipped with VSCode's Electron,\nwhich is currently \u003ccode\u003e14.x\u003c/code\u003e. VS Code also \u003ca href=\"https://github.com/microsoft/vscode/wiki/How-to-Contribute#prerequisites\"\u003elists Node.js\nrequirements\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eUsing other versions of Node.js \u003ca href=\"https://github.com/coder/code-server/issues/1633\"\u003emay lead to unexpected\nbehavior\u003c/a\u003e.\u003c/p\u003e\n\u003ch2 id=\"ubuntu-debian\"\u003e\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#ubuntu-debian\"\u003e\u003cspan class=\"icon icon-link\"\u003e\u003c/span\u003e\u003c/a\u003eUbuntu, Debian\u003c/h2\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-bash\"\u003esudo apt-get install -y \\\n  build-essential \\\n  pkg-config \\\n  python3\nnpm config \u003cspan class=\"hljs-built_in\"\u003eset\u003c/span\u003e python python3\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eProceed to \u003ca href=\"#installing\"\u003einstalling\u003c/a\u003e\u003c/p\u003e\n\u003ch2 id=\"fedora-centos-rhel\"\u003e\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#fedora-centos-rhel\"\u003e\u003cspan class=\"icon icon-link\"\u003e\u003c/span\u003e\u003c/a\u003eFedora, CentOS, RHEL\u003c/h2\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-bash\"\u003esudo yum groupinstall -y \u003cspan class=\"hljs-string\"\u003e'Development Tools'\u003c/span\u003e\nsudo yum config-manager --set-enabled PowerTools \u003cspan class=\"hljs-comment\"\u003e# unnecessary on CentOS 7\u003c/span\u003e\nsudo yum install -y python2\nnpm config \u003cspan class=\"hljs-built_in\"\u003eset\u003c/span\u003e python python2\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eProceed to \u003ca href=\"#installing\"\u003einstalling\u003c/a\u003e\u003c/p\u003e\n\u003ch2 id=\"alpine\"\u003e\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#alpine\"\u003e\u003cspan class=\"icon icon-link\"\u003e\u003c/span\u003e\u003c/a\u003eAlpine\u003c/h2\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-bash\"\u003eapk add alpine-sdk bash libstdc++ libc6-compat\nnpm config \u003cspan class=\"hljs-built_in\"\u003eset\u003c/span\u003e python python3\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eProceed to \u003ca href=\"#installing\"\u003einstalling\u003c/a\u003e\u003c/p\u003e\n\u003ch2 id=\"macos\"\u003e\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#macos\"\u003e\u003cspan class=\"icon icon-link\"\u003e\u003c/span\u003e\u003c/a\u003emacOS\u003c/h2\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-bash\"\u003excode-select --install\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eProceed to \u003ca href=\"#installing\"\u003einstalling\u003c/a\u003e\u003c/p\u003e\n\u003ch2 id=\"freebsd\"\u003e\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#freebsd\"\u003e\u003cspan class=\"icon icon-link\"\u003e\u003c/span\u003e\u003c/a\u003eFreeBSD\u003c/h2\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-sh\"\u003epkg install -y git python npm-node14 pkgconf\npkg install -y libinotify\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eProceed to \u003ca href=\"#installing\"\u003einstalling\u003c/a\u003e\u003c/p\u003e\n\u003ch2 id=\"windows\"\u003e\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#windows\"\u003e\u003cspan class=\"icon icon-link\"\u003e\u003c/span\u003e\u003c/a\u003eWindows\u003c/h2\u003e\n\u003cp\u003eInstalling code-server requires all of the \u003ca href=\"https://github.com/Microsoft/vscode/wiki/How-to-Contribute#prerequisites\"\u003eprerequisites for VS Code development\u003c/a\u003e. When installing the C++ compiler tool chain, we recommend using \"Option 2: Visual Studio 2019\" for best results.\u003c/p\u003e\n\u003cp\u003eNext, install code-server with:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-bash\"\u003enpm install -g code-server\ncode-server\n\u003cspan class=\"hljs-comment\"\u003e# Now visit http://127.0.0.1:8080. Your password is in ~/.config/code-server/config.yaml\u003c/span\u003e\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eA \u003ccode\u003epostinstall.sh\u003c/code\u003e script will attempt to run. Select your terminal (e.g., Git bash) as the default application for \u003ccode\u003e.sh\u003c/code\u003e files. If an additional dialog does not appear, run the install command again.\u003c/p\u003e\n\u003cp\u003eIf the \u003ccode\u003ecode-server\u003c/code\u003e command is not found, you'll need to \u003ca href=\"https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/\"\u003eadd a directory to your PATH\u003c/a\u003e. To find the directory, use the following command:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-shell\"\u003enpm config get prefix\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eFor help and additional troubleshooting, see \u003ca href=\"https://github.com/coder/code-server/issues/1397\"\u003e#1397\u003c/a\u003e.\u003c/p\u003e\n\u003ch2 id=\"installing\"\u003e\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#installing\"\u003e\u003cspan class=\"icon icon-link\"\u003e\u003c/span\u003e\u003c/a\u003eInstalling\u003c/h2\u003e\n\u003cp\u003eAfter adding the dependencies for your OS, install the code-server package globally:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-bash\"\u003enpm install -g code-server\ncode-server\n\u003cspan class=\"hljs-comment\"\u003e# Now visit http://127.0.0.1:8080. Your password is in ~/.config/code-server/config.yaml\u003c/span\u003e\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2 id=\"troubleshooting\"\u003e\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#troubleshooting\"\u003e\u003cspan class=\"icon icon-link\"\u003e\u003c/span\u003e\u003c/a\u003eTroubleshooting\u003c/h2\u003e\n\u003cp\u003eIf you need further assistance, post on our \u003ca href=\"https://github.com/coder/code-server/discussions\"\u003eGitHub Discussions\npage\u003c/a\u003e.\u003c/p\u003e\n\u003ch3 id=\"issues-with-nodejs-after-version-upgrades\"\u003e\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#issues-with-nodejs-after-version-upgrades\"\u003e\u003cspan class=\"icon icon-link\"\u003e\u003c/span\u003e\u003c/a\u003eIssues with Node.js after version upgrades\u003c/h3\u003e\n\u003cp\u003eOccasionally, you may run into issues with Node.js.\u003c/p\u003e\n\u003cp\u003eIf you install code-server using \u003ccode\u003enpm\u003c/code\u003e, and you upgrade your Node.js\nversion, you may need to reinstall code-server to recompile native modules.\nSometimes, you can get around this by navigating into code-server's \u003ccode\u003elib/vscode\u003c/code\u003e\ndirectory and running \u003ccode\u003enpm rebuild\u003c/code\u003e to recompile the modules.\u003c/p\u003e\n\u003cp\u003eA step-by-step example of how you might do this is:\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003eInstall code-server: \u003ccode\u003ebrew install code-server\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003eNavigate into the directory: \u003ccode\u003ecd /usr/local/Cellar/code-server/\u0026#x3C;version\u003e/libexec/lib/vscode/\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003eRecompile the native modules: \u003ccode\u003enpm rebuild\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003eRestart code-server\u003c/li\u003e\n\u003c/ol\u003e\n\u003ch3 id=\"debugging-install-issues-with-npm\"\u003e\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#debugging-install-issues-with-npm\"\u003e\u003cspan class=\"icon icon-link\"\u003e\u003c/span\u003e\u003c/a\u003eDebugging install issues with npm\u003c/h3\u003e\n\u003cp\u003eTo debug installation issues:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-shell\"\u003e\u003cspan class=\"hljs-meta\"\u003e#\u003c/span\u003e\u003cspan class=\"bash\"\u003e Uninstall\u003c/span\u003e\nnpm uninstall -g --unsafe-perm code-server \u003e /dev/null 2\u003e\u0026#x26;1\n\u003cspan class=\"hljs-meta\"\u003e\n#\u003c/span\u003e\u003cspan class=\"bash\"\u003e Install with logging\u003c/span\u003e\nnpm install --loglevel verbose -g --unsafe-perm code-server\n\u003c/code\u003e\u003c/pre\u003e","attributes":{"description":"How to install code-server using npm","title":"npm"},"tableOfContents":[{"title":"Node.js version","id":"nodejs-version"},{"title":"Ubuntu, Debian","id":"ubuntu-debian"},{"title":"Fedora, CentOS, RHEL","id":"fedora-centos-rhel"},{"title":"Alpine","id":"alpine"},{"title":"macOS","id":"macos"},{"title":"FreeBSD","id":"freebsd"},{"title":"Windows","id":"windows"},{"title":"Installing","id":"installing"},{"title":"Troubleshooting","id":"troubleshooting"}],"readingTime":{"text":"4 min read","minutes":3.4,"time":204000,"words":680},"crumbs":[{"title":"Install","slug":["install"]}],"filePath":"npm.md","slug":["npm"],"children":[]},{"html":"\u003ch1 id=\"code-server-helm-chart\"\u003e\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#code-server-helm-chart\"\u003e\u003cspan class=\"icon icon-link\"\u003e\u003c/span\u003e\u003c/a\u003ecode-server Helm Chart\u003c/h1\u003e\n\u003cp\u003e\u003ca href=\"https://img.shields.io/badge/Version-1.0.0-informational?style=flat-square\"\u003e\u003cimg src=\"https://img.shields.io/badge/Version-1.0.0-informational?style=flat-square\" alt=\"Version: 1.0.0\" width=\"90\" height=\"20\"\u003e\u003c/a\u003e \u003ca href=\"https://img.shields.io/badge/Type-application-informational?style=flat-square\"\u003e\u003cimg src=\"https://img.shields.io/badge/Type-application-informational?style=flat-square\" alt=\"Type: application\" width=\"106\" height=\"20\"\u003e\u003c/a\u003e \u003ca href=\"https://img.shields.io/badge/AppVersion-4.2.0-informational?style=flat-square\"\u003e\u003cimg src=\"https://img.shields.io/badge/AppVersion-4.2.0-informational?style=flat-square\" alt=\"AppVersion: 4.2.0\" width=\"112\" height=\"20\"\u003e\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003e\u003ca href=\"https://github.com/coder/code-server\"\u003ecode-server\u003c/a\u003e code-server is VS Code running\non a remote server, accessible through the browser.\u003c/p\u003e\n\u003cp\u003eThis chart is community maintained by \u003ca href=\"https://github.com/Matthew-Beckett\"\u003e@Matthew-Beckett\u003c/a\u003e and \u003ca href=\"https://github.com/alexgorbatchev\"\u003e@alexgorbatchev\u003c/a\u003e\u003c/p\u003e\n\u003ch2 id=\"quickstart\"\u003e\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#quickstart\"\u003e\u003cspan class=\"icon icon-link\"\u003e\u003c/span\u003e\u003c/a\u003eQuickstart\u003c/h2\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-console\"\u003e\u003cspan class=\"hljs-meta\"\u003e$\u003c/span\u003e\u003cspan class=\"bash\"\u003e git \u003cspan class=\"hljs-built_in\"\u003eclone\u003c/span\u003e https://github.com/coder/code-server\u003c/span\u003e\n\u003cspan class=\"hljs-meta\"\u003e$\u003c/span\u003e\u003cspan class=\"bash\"\u003e \u003cspan class=\"hljs-built_in\"\u003ecd\u003c/span\u003e code-server\u003c/span\u003e\n\u003cspan class=\"hljs-meta\"\u003e$\u003c/span\u003e\u003cspan class=\"bash\"\u003e helm upgrade --install code-server ci/helm-chart\u003c/span\u003e\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2 id=\"introduction\"\u003e\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#introduction\"\u003e\u003cspan class=\"icon icon-link\"\u003e\u003c/span\u003e\u003c/a\u003eIntroduction\u003c/h2\u003e\n\u003cp\u003eThis chart bootstraps a code-server deployment on a\n\u003ca href=\"http://kubernetes.io\"\u003eKubernetes\u003c/a\u003e cluster using the \u003ca href=\"https://helm.sh\"\u003eHelm\u003c/a\u003e\npackage manager.\u003c/p\u003e\n\u003ch2 id=\"prerequisites\"\u003e\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#prerequisites\"\u003e\u003cspan class=\"icon icon-link\"\u003e\u003c/span\u003e\u003c/a\u003ePrerequisites\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003eKubernetes 1.6+\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2 id=\"installing-the-chart\"\u003e\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#installing-the-chart\"\u003e\u003cspan class=\"icon icon-link\"\u003e\u003c/span\u003e\u003c/a\u003eInstalling the Chart\u003c/h2\u003e\n\u003cp\u003eTo install the chart with the release name \u003ccode\u003ecode-server\u003c/code\u003e:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-console\"\u003e\u003cspan class=\"hljs-meta\"\u003e$\u003c/span\u003e\u003cspan class=\"bash\"\u003e git \u003cspan class=\"hljs-built_in\"\u003eclone\u003c/span\u003e https://github.com/coder/code-server\u003c/span\u003e\n\u003cspan class=\"hljs-meta\"\u003e$\u003c/span\u003e\u003cspan class=\"bash\"\u003e \u003cspan class=\"hljs-built_in\"\u003ecd\u003c/span\u003e code-server\u003c/span\u003e\n\u003cspan class=\"hljs-meta\"\u003e$\u003c/span\u003e\u003cspan class=\"bash\"\u003e helm upgrade --install code-server ci/helm-chart\u003c/span\u003e\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eThe command deploys code-server on the Kubernetes cluster in the default\nconfiguration. The \u003ca href=\"#configuration\"\u003econfiguration\u003c/a\u003e section lists the parameters\nthat can be configured during installation.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eTip\u003c/strong\u003e: List all releases using \u003ccode\u003ehelm list\u003c/code\u003e\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch2 id=\"uninstalling-the-chart\"\u003e\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#uninstalling-the-chart\"\u003e\u003cspan class=\"icon icon-link\"\u003e\u003c/span\u003e\u003c/a\u003eUninstalling the Chart\u003c/h2\u003e\n\u003cp\u003eTo uninstall/delete the \u003ccode\u003ecode-server\u003c/code\u003e deployment:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-console\"\u003e\u003cspan class=\"hljs-meta\"\u003e$\u003c/span\u003e\u003cspan class=\"bash\"\u003e helm delete code-server\u003c/span\u003e\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eThe command removes all the Kubernetes components associated with the chart and\ndeletes the release.\u003c/p\u003e\n\u003ch2 id=\"configuration\"\u003e\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#configuration\"\u003e\u003cspan class=\"icon icon-link\"\u003e\u003c/span\u003e\u003c/a\u003eConfiguration\u003c/h2\u003e\n\u003cp\u003eThe following table lists the configurable parameters of the code-server chart\nand their default values.\u003c/p\u003e\n\u003ch2 id=\"values\"\u003e\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#values\"\u003e\u003cspan class=\"icon icon-link\"\u003e\u003c/span\u003e\u003c/a\u003eValues\u003c/h2\u003e\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003ctable\u003e\u003cthead\u003e\u003ctr\u003e\u003cth\u003eKey\u003c/th\u003e\u003cth\u003eType\u003c/th\u003e\u003cth\u003eDefault\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\u003ctbody\u003e\u003ctr\u003e\u003ctd\u003eaffinity\u003c/td\u003e\u003ctd\u003eobject\u003c/td\u003e\u003ctd\u003e\u003ccode\u003e{}\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003eextraArgs\u003c/td\u003e\u003ctd\u003elist\u003c/td\u003e\u003ctd\u003e\u003ccode\u003e[]\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003eextraConfigmapMounts\u003c/td\u003e\u003ctd\u003elist\u003c/td\u003e\u003ctd\u003e\u003ccode\u003e[]\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003eextraContainers\u003c/td\u003e\u003ctd\u003estring\u003c/td\u003e\u003ctd\u003e\u003ccode\u003e\"\"\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003eextraInitContainers\u003c/td\u003e\u003ctd\u003estring\u003c/td\u003e\u003ctd\u003e\u003ccode\u003e\"\"\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003eextraSecretMounts\u003c/td\u003e\u003ctd\u003elist\u003c/td\u003e\u003ctd\u003e\u003ccode\u003e[]\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003eextraVars\u003c/td\u003e\u003ctd\u003elist\u003c/td\u003e\u003ctd\u003e\u003ccode\u003e[]\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003eextraVolumeMounts\u003c/td\u003e\u003ctd\u003elist\u003c/td\u003e\u003ctd\u003e\u003ccode\u003e[]\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003efullnameOverride\u003c/td\u003e\u003ctd\u003estring\u003c/td\u003e\u003ctd\u003e\u003ccode\u003e\"\"\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003ehostnameOverride\u003c/td\u003e\u003ctd\u003estring\u003c/td\u003e\u003ctd\u003e\u003ccode\u003e\"\"\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003eimage.pullPolicy\u003c/td\u003e\u003ctd\u003estring\u003c/td\u003e\u003ctd\u003e\u003ccode\u003e\"Always\"\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003eimage.repository\u003c/td\u003e\u003ctd\u003estring\u003c/td\u003e\u003ctd\u003e\u003ccode\u003e\"codercom/code-server\"\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003eimage.tag\u003c/td\u003e\u003ctd\u003estring\u003c/td\u003e\u003ctd\u003e\u003ccode\u003e\"4.2.0\"\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003eimagePullSecrets\u003c/td\u003e\u003ctd\u003elist\u003c/td\u003e\u003ctd\u003e\u003ccode\u003e[]\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003eingress.enabled\u003c/td\u003e\u003ctd\u003ebool\u003c/td\u003e\u003ctd\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003enameOverride\u003c/td\u003e\u003ctd\u003estring\u003c/td\u003e\u003ctd\u003e\u003ccode\u003e\"\"\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003enodeSelector\u003c/td\u003e\u003ctd\u003eobject\u003c/td\u003e\u003ctd\u003e\u003ccode\u003e{}\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003epersistence.accessMode\u003c/td\u003e\u003ctd\u003estring\u003c/td\u003e\u003ctd\u003e\u003ccode\u003e\"ReadWriteOnce\"\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003epersistence.annotations\u003c/td\u003e\u003ctd\u003eobject\u003c/td\u003e\u003ctd\u003e\u003ccode\u003e{}\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003epersistence.enabled\u003c/td\u003e\u003ctd\u003ebool\u003c/td\u003e\u003ctd\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003epersistence.size\u003c/td\u003e\u003ctd\u003estring\u003c/td\u003e\u003ctd\u003e\u003ccode\u003e\"1Gi\"\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003epodAnnotations\u003c/td\u003e\u003ctd\u003eobject\u003c/td\u003e\u003ctd\u003e\u003ccode\u003e{}\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003epodSecurityContext\u003c/td\u003e\u003ctd\u003eobject\u003c/td\u003e\u003ctd\u003e\u003ccode\u003e{}\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003ereplicaCount\u003c/td\u003e\u003ctd\u003eint\u003c/td\u003e\u003ctd\u003e\u003ccode\u003e1\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003eresources\u003c/td\u003e\u003ctd\u003eobject\u003c/td\u003e\u003ctd\u003e\u003ccode\u003e{}\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003esecurityContext.enabled\u003c/td\u003e\u003ctd\u003ebool\u003c/td\u003e\u003ctd\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003esecurityContext.fsGroup\u003c/td\u003e\u003ctd\u003eint\u003c/td\u003e\u003ctd\u003e\u003ccode\u003e1000\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003esecurityContext.runAsUser\u003c/td\u003e\u003ctd\u003eint\u003c/td\u003e\u003ctd\u003e\u003ccode\u003e1000\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003eservice.port\u003c/td\u003e\u003ctd\u003eint\u003c/td\u003e\u003ctd\u003e\u003ccode\u003e8443\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003eservice.type\u003c/td\u003e\u003ctd\u003estring\u003c/td\u003e\u003ctd\u003e\u003ccode\u003e\"ClusterIP\"\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003eserviceAccount.create\u003c/td\u003e\u003ctd\u003ebool\u003c/td\u003e\u003ctd\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003eserviceAccount.name\u003c/td\u003e\u003ctd\u003estring\u003c/td\u003e\u003ctd\u003e\u003ccode\u003enil\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003etolerations\u003c/td\u003e\u003ctd\u003elist\u003c/td\u003e\u003ctd\u003e\u003ccode\u003e[]\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003evolumePermissions.enabled\u003c/td\u003e\u003ctd\u003ebool\u003c/td\u003e\u003ctd\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003evolumePermissions.securityContext.runAsUser\u003c/td\u003e\u003ctd\u003eint\u003c/td\u003e\u003ctd\u003e\u003ccode\u003e0\u003c/code\u003e\u003c/td\u003e\u003c/tr\u003e\u003c/tbody\u003e\u003c/table\u003e\n\u003cp\u003eSpecify each parameter using the \u003ccode\u003e--set key=value[,key=value]\u003c/code\u003e argument to \u003ccode\u003ehelm install\u003c/code\u003e. For example,\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-console\"\u003e\u003cspan class=\"hljs-meta\"\u003e$\u003c/span\u003e\u003cspan class=\"bash\"\u003e helm upgrade --install code-server \\\n  ci/helm-chart \\\n  --\u003cspan class=\"hljs-built_in\"\u003eset\u003c/span\u003e persistence.enabled=\u003cspan class=\"hljs-literal\"\u003efalse\u003c/span\u003e\u003c/span\u003e\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eThe above command sets the the persistence storage to false.\u003c/p\u003e\n\u003cp\u003eAlternatively, a YAML file that specifies the values for the above parameters\ncan be provided while installing the chart. For example,\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-console\"\u003e\u003cspan class=\"hljs-meta\"\u003e$\u003c/span\u003e\u003cspan class=\"bash\"\u003e helm upgrade --install code-server ci/helm-chart -f values.yaml\u003c/span\u003e\n\u003c/code\u003e\u003c/pre\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eTip\u003c/strong\u003e: You can use the default \u003ca href=\"values.yaml\"\u003evalues.yaml\u003c/a\u003e\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch1 id=\"extra-containers\"\u003e\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#extra-containers\"\u003e\u003cspan class=\"icon icon-link\"\u003e\u003c/span\u003e\u003c/a\u003eExtra Containers\u003c/h1\u003e\n\u003cp\u003eThere are two parameters which allow to add more containers to pod.\nUse \u003ccode\u003eextraContainers\u003c/code\u003e to add regular containers\nand \u003ccode\u003eextraInitContainers\u003c/code\u003e to add init containers. You can read more\nabout init containers in \u003ca href=\"https://kubernetes.io/docs/concepts/workloads/pods/init-containers/\"\u003ek8s documentation\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eBoth parameters accept strings and use them as a templates\u003c/p\u003e\n\u003cp\u003eExample of using \u003ccode\u003eextraInitContainers\u003c/code\u003e:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-yaml\"\u003e\u003cspan class=\"hljs-attr\"\u003eextraInitContainers:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e|\n  - name: customization\n    image: {{ .Values.image.repository }}:{{ .Values.image.tag }}\n    imagePullPolicy: IfNotPresent\n    env:\n      - name: SERVICE_URL\n        value: https://open-vsx.org/vscode/gallery\n      - name: ITEM_URL\n        value: https://open-vsx.org/vscode/item\n    command:\n      - sh\n      - -c\n      - |\n        code-server --install-extension ms-python.python\n        code-server --install-extension golang.Go\n    volumeMounts:\n      - name: data\n        mountPath: /home/coder\n\u003c/span\u003e\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eWith this yaml in file \u003ccode\u003einit.yaml\u003c/code\u003e, you can execute\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-console\"\u003e\u003cspan class=\"hljs-meta\"\u003e$\u003c/span\u003e\u003cspan class=\"bash\"\u003e helm upgrade --install code-server \\\n  ci/helm-chart \\\n  --values init.yaml\u003c/span\u003e\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eto deploy code-server with python and golang extensions preinstalled\nbefore main container have started.\u003c/p\u003e","attributes":{"description":"How to install code-server using the Helm package manager","title":"Helm"},"tableOfContents":[{"title":"Quickstart","id":"quickstart"},{"title":"Introduction","id":"introduction"},{"title":"Prerequisites","id":"prerequisites"},{"title":"Installing the Chart","id":"installing-the-chart"},{"title":"Uninstalling the Chart","id":"uninstalling-the-chart"},{"title":"Configuration","id":"configuration"},{"title":"Values","id":"values"}],"readingTime":{"text":"3 min read","minutes":2.465,"time":147900,"words":493},"crumbs":[{"title":"Install","slug":["install"]}],"filePath":"helm.md","slug":["helm"],"children":[]}]},"navigation":[{"title":"Home","route":"/docs/code-server/latest","navigable":true,"icon":"\u003csvg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\" viewBox=\"0 0 16 16\" width=\"16px\" xml:space=\"preserve\"\u003e\u003cpath d=\"M15.45,7L14,5.551V2c0-0.55-0.45-1-1-1h-1c-0.55,0-1,0.45-1,1v0.553L9,0.555C8.727,0.297,8.477,0,8,0S7.273,0.297,7,0.555  L0.55,7C0.238,7.325,0,7.562,0,8c0,0.563,0.432,1,1,1h1v6c0,0.55,0.45,1,1,1h3v-5c0-0.55,0.45-1,1-1h2c0.55,0,1,0.45,1,1v5h3  c0.55,0,1-0.45,1-1V9h1c0.568,0,1-0.437,1-1C16,7.562,15.762,7.325,15.45,7z\"\u003e\u003c/path\u003e\u003c/svg\u003e"},{"title":"Requirements","route":"/docs/code-server/latest/requirements","navigable":true,"icon":"\u003csvg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\u003cpath d=\"M6 2V11H2V15C2 16.7 3.3 18 5 18H15C16.7 18 18 16.7 18 15V2H6ZM16 15C16 15.6 15.6 16 15 16H8V4H16V15Z\" /\u003e\u003cpath d=\"M14 7H10V9H14V7Z\" /\u003e\u003cpath d=\"M14 11H10V13H14V11Z\" /\u003e\u003c/svg\u003e"},{"title":"Install","route":"/docs/code-server/latest/install","navigable":true,"icon":"\u003csvg class=\"MuiSvgIcon-root jss172\" focusable=\"false\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"\u003e\u003cpath d=\"M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z\"\u003e\u003c/path\u003e\u003c/svg\u003e","children":[{"title":"npm","route":"/docs/code-server/latest/npm","navigable":true,"icon":""},{"title":"Helm","route":"/docs/code-server/latest/helm","navigable":true,"icon":""}]},{"title":"Usage","route":"/docs/code-server/latest/guide","navigable":true,"icon":"\u003csvg viewBox=\"0 0 16 16\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\u003cpath d=\"M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 10l-2.5-1.5L15 12V4h5v8z\"\u003e\u003c/path\u003e\u003c/svg\u003e","children":[{"title":"--link","route":"/docs/code-server/latest/link","navigable":true,"icon":""},{"title":"iPad","route":"/docs/code-server/latest/ipad","navigable":true,"icon":""},{"title":"Termux","route":"/docs/code-server/latest/termux","navigable":true,"icon":""},{"title":"iOS","route":"/docs/code-server/latest/ios","navigable":true,"icon":""},{"title":"Android","route":"/docs/code-server/latest/android","navigable":true,"icon":""}]},{"title":"Collaboration","route":"/docs/code-server/latest/collaboration","navigable":true,"icon":"\u003csvg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e \u003cpath d=\"M12.2 13.4357L9.5 11.4357C10.4 10.7357 11 9.7357 11 8.5357V7.7357C11 5.8357 9.6 4.1357 7.7 4.0357C5.7 3.9357 4 5.5357 4 7.5357V8.5357C4 9.7357 4.6 10.7357 5.5 11.4357L2.8 13.5357C2.3 13.9357 2 14.5357 2 15.1357V17.0357C2 17.6357 2.4 18.0357 3 18.0357H12C12.6 18.0357 13 17.6357 13 17.0357V15.0357C13 14.4357 12.7 13.8357 12.2 13.4357Z\"/\u003e \u003cpath d=\"M17.1 8.43436L15.3 7.23436C15.7 6.83436 16 6.23436 16 5.53436V4.63436C16 3.43436 15.1 2.23436 13.9 2.03436C12.7 1.83436 11.7 2.53436 11.2 3.43436C12.3 4.43436 13 5.83436 13 7.43436V8.43436C13 9.33436 12.8 10.2344 12.4 10.9344C12.4 10.9344 13.6 11.8344 13.6 11.9344H17C17.6 11.9344 18 11.5344 18 10.9344V10.1344C18 9.43436 17.7 8.83436 17.1 8.43436Z\"/\u003e\u003c/svg\u003e"},{"title":"Upgrade","route":"/docs/code-server/latest/upgrade","navigable":true,"icon":"\u003csvg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\u003cpath d=\"M17.8049 2.19795C17.7385 2.1311 17.6587 2.07899 17.5708 2.04504C17.4829 2.01108 17.3889 1.99604 17.2948 2.00089C7.89216 2.49153 4.4188 10.8673 4.38528 10.9517C4.33624 11.0736 4.32406 11.2071 4.35028 11.3358C4.3765 11.4645 4.43995 11.5827 4.53274 11.6756L8.32449 15.4674C8.41787 15.5606 8.53669 15.6242 8.66606 15.6502C8.79543 15.6762 8.92959 15.6634 9.05174 15.6135C9.13552 15.5793 17.4664 12.0671 17.9986 2.7087C18.0039 2.61474 17.9895 2.5207 17.9561 2.4327C17.9227 2.3447 17.8712 2.26471 17.8049 2.19795ZM12.3314 9.56427C12.1439 9.75179 11.9051 9.87951 11.645 9.93126C11.385 9.98302 11.1154 9.9565 10.8704 9.85505C10.6254 9.7536 10.4161 9.58178 10.2687 9.36131C10.1214 9.14085 10.0428 8.88166 10.0428 8.6165C10.0428 8.35135 10.1214 8.09215 10.2687 7.87169C10.4161 7.65123 10.6254 7.47941 10.8704 7.37796C11.1154 7.27651 11.385 7.24998 11.645 7.30174C11.9051 7.3535 12.1439 7.48121 12.3314 7.66873C12.5827 7.92012 12.7239 8.26104 12.7239 8.6165C12.7239 8.97197 12.5827 9.31288 12.3314 9.56427Z\"/\u003e\u003cpath d=\"M2.74602 14.5444C2.92281 14.3664 3.133 14.2251 3.36454 14.1285C3.59608 14.0319 3.8444 13.9819 4.09529 13.9815C4.34617 13.9811 4.59466 14.0.12 4.82653 14.126C5.05839 14.2218 5.26907 14.3624 5.44647 14.5398C5.62386 14.7172 5.7645 14.9279 5.86031 15.1598C5.95612 15.3916 6.00522 15.6401 6.00479 15.891C6.00437 16.1419 5.95442 16.3902 5.85782 16.6218C5.76122 16.8533 5.61987 17.0635 5.44186 17.2403C4.69719 17.985 2 18.0004 2 18.0004C2 18.0004 2 15.2884 2.74602 14.5444Z\"/\u003e\u003cpath d=\"M8.9416 3.48269C7.99688 3.31826 7.02645 3.38371 6.11237 3.67352C5.19828 3.96332 4.36741 4.46894 3.68999 5.14765C3.33153 5.50944 3.01988 5.91477 2.76233 6.35415C2.68692 6.4822 2.6562 6.63169 2.67501 6.77911C2.69381 6.92652 2.76108 7.06351 2.86623 7.16853L4.1994 8.50238C5.43822 6.53634 7.04911 4.83119 8.9416 3.48269Z\"/\u003e\u003cpath d=\"M16.5181 11.0585C16.6825 12.0033 16.6171 12.9737 16.3273 13.8878C16.0375 14.8019 15.5318 15.6327 14.8531 16.3101C14.4914 16.6686 14.086 16.9803 13.6466 17.2378C13.5186 17.3132 13.3691 17.3439 13.2217 17.3251C13.0743 17.3063 12.9373 17.2391 12.8323 17.1339L11.4984 15.8007C13.4645 14.5619 15.1696 12.951 16.5181 11.0585Z\"/\u003e\u003c/svg\u003e"},{"title":"FAQ","route":"/docs/code-server/latest/FAQ","navigable":true,"icon":"\u003csvg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\u003cpath d=\"M10.0001 18.3333C14.6025 18.3333 18.3334 14.6024 18.3334 10C18.3334 5.39762 14.6025 1.66666 10.0001 1.66666C5.39771 1.66666 1.66675 5.39762 1.66675 10C1.66675 14.6024 5.39771 18.3333 10.0001 18.3333Z\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/\u003e\u003cpath d=\"M7.57495 7.5C7.77087 6.94306 8.15758 6.47342 8.66658 6.17428C9.17558 5.87513 9.77403 5.76578 10.3559 5.86559C10.9378 5.96541 11.4656 6.26794 11.8458 6.71961C12.2261 7.17128 12.4342 7.74294 12.4333 8.33333C12.4333 10 9.93328 10.8333 9.93328 10.8333\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/\u003e\u003cpath d=\"M10 14.1667H10.0083\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/\u003e\u003c/svg\u003e"},{"title":"Contributing","route":"/docs/code-server/latest/CONTRIBUTING","navigable":true,"icon":"\u003csvg width=\"20\" height=\"20\" fill=\"none\" viewBox=\"0 0 20 20\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\u003cpath d=\"M5 2.5V12.5\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/\u003e\u003cpath d=\"M15 7.5C16.3807 7.5 17.5 6.38071 17.5 5C17.5 3.61929 16.3807 2.5 15 2.5C13.6193 2.5 12.5 3.61929 12.5 5C12.5 6.38071 13.6193 7.5 15 7.5Z\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/\u003e\u003cpath d=\"M5 17.5C6.38071 17.5 7.5 16.3807 7.5 15C7.5 13.6193 6.38071 12.5 5 12.5C3.61929 12.5 2.5 13.6193 2.5 15C2.5 16.3807 3.61929 17.5 5 17.5Z\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/\u003e\u003cpath d=\"M15 7.5C15 9.48912 14.2098 11.3968 12.8033 12.8033C11.3968 14.2098 9.48912 15 7.5 15\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/\u003e\u003c/svg\u003e","children":[{"title":"Code of conduct","route":"/docs/code-server/latest/CODE_OF_CONDUCT","navigable":true,"icon":""},{"title":"Maintenance","route":"/docs/code-server/latest/MAINTAINING","navigable":true,"icon":""},{"title":"Triage","route":"/docs/code-server/latest/triage","navigable":true,"icon":""},{"title":"Security","route":"/docs/code-server/latest/SECURITY","navigable":true,"icon":""}]}],"product":"code-server"},"__N_SSG":true},"page":"/docs/code-server/latest/[[...slug]]","query":{"slug":["install"]},"buildId":"pV0MNiuBXy7zRUCIeBBw7","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>
